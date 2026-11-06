@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Hind } from "next/font/google";
+import { Inter, Playfair_Display, Hind, Poppins } from "next/font/google";
 import "./globals.css";
+import PwaRegister from "@/components/pwa/PwaRegister";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,18 +25,18 @@ const playfair = Playfair_Display({
 const hind = Hind({
   subsets: ["devanagari"],
   variable: "--font-hind",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flowersoffers.com"),
   title: {
-    default: "FlowersOffers.com — Fresh Flowers from Farmers | India",
+    default: "FlowersOffers.com — India's Freshest Flower Marketplace",
     template: "%s | FlowersOffers.com",
   },
   description:
-    "Buy fresh flowers online in India — marigold, rose, jasmine, lotus and more. Sourced directly from farmers. Best prices for pooja, weddings, festivals, and bulk orders. Same-day delivery.",
+    "Buy fresh flowers online in India — Marigold, Rose, Jasmine, Lotus, Tuberose, and garlands. Sourced directly from farmers. Best prices for daily pooja, weddings, and bulk B2B supply.",
   keywords: [
     "buy flowers online india",
     "fresh flowers india",
@@ -61,12 +69,12 @@ export const metadata: Metadata = {
     alternateLocale: ["hi_IN", "ta_IN", "te_IN"],
     url: "https://flowersoffers.com",
     siteName: "FlowersOffers.com",
-    title: "FlowersOffers.com — Fresh Flowers from Farmers",
+    title: "FlowersOffers.com — India's Freshest Flower Marketplace",
     description:
-      "Buy fresh flowers online in India. Direct from farmers. Best prices for pooja, weddings, and festivals.",
+      "Every flower should travel from the farmer's hand directly to yours. Sourced directly from flower farmers across India.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "FlowersOffers.com — Fresh Flowers from Indian Farmers",
@@ -77,30 +85,24 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@FlowersOffers",
     creator: "@FlowersOffers",
-    title: "FlowersOffers.com — Fresh Flowers from Farmers",
+    title: "FlowersOffers.com — India's Freshest Flower Marketplace",
     description:
       "Buy fresh flowers online in India. Direct from farmers. Best prices for pooja, weddings, and festivals.",
-    images: ["/og-image.jpg"],
+    images: ["/logo.png"],
   },
   icons: {
     icon: [
+      { url: "/logo.png", type: "image/png" },
       { url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/icons/icon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
+    shortcut: "/logo.png",
     apple: [
+      { url: "/logo.png", sizes: "180x180", type: "image/png" },
       { url: "/icons/icon-180x180.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/icons/icon-32x32.png",
   },
   manifest: "/manifest.json",
-  alternates: {
-    canonical: "https://flowersoffers.com",
-    languages: {
-      "en-IN": "https://flowersoffers.com",
-      "hi-IN": "https://flowersoffers.com/hi",
-      "ta-IN": "https://flowersoffers.com/ta",
-    },
-  },
   verification: {
     google: "GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
   },
@@ -112,23 +114,45 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "FlowersOffers.com",
+    url: "https://flowersoffers.com",
+    logo: "https://flowersoffers.com/logo.png",
+    description:
+      "India's fresh flower marketplace connecting farmers directly to homes, temples, and event planners.",
+    sameAs: [
+      "https://instagram.com/flowersoffers",
+      "https://facebook.com/flowersoffers",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91XXXXXXXXXX",
+      contactType: "customer service",
+      availableLanguage: ["English", "Hindi", "Tamil", "Telugu", "Marathi"],
+    },
+  };
+
   return (
     <html
       lang="en-IN"
-      className={`${inter.variable} ${playfair.variable} ${hind.variable}`}
+      className={`${poppins.variable} ${inter.variable} ${playfair.variable} ${hind.variable}`}
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#FF6B35" />
+        <meta name="theme-color" content="#701A40" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="FlowersOffers" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
-      <body className="font-body bg-saffron-50 text-gray-900 antialiased">
+      <body style={{ backgroundColor: "#FFF9EF", color: "#26382B" }}>
+        <PwaRegister />
         {children}
       </body>
     </html>

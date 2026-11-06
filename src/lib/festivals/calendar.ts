@@ -3,6 +3,7 @@ export interface Festival {
   id: string;
   name: string;
   nameHi: string; // Hindi name
+  emoji?: string;
   date: string; // YYYY-MM-DD (approximate, updated annually)
   endDate?: string;
   region: "pan-india" | "north" | "south" | "west" | "east";
