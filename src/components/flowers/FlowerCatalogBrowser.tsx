@@ -105,19 +105,19 @@ export default function FlowerCatalogBrowser({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* Search Box */}
           <div className="relative flex-1">
-            <div className="flex items-center gap-3 bg-[#FFF9EF] border border-[#E9E4D8] rounded-xl px-4 py-2.5 transition-all focus-within:border-[#701A40] focus-within:ring-2 focus-within:ring-[#701A40]/10">
-              <span className="text-lg text-[#701A40]">🔍</span>
+            <div className="flex items-center gap-3 bg-[#FFF9EF] border border-[#E9E4D8] rounded-xl px-4 py-2.5 transition-all focus-within:border-[#104B26] focus-within:ring-2 focus-within:ring-[#104B26]/10">
+              <span className="text-lg text-[#104B26]">🔍</span>
               <input
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search marigold, desi rose, madurai malli, lotus, puja flowers..."
-                className="w-full bg-transparent border-none outline-none text-sm font-medium text-[#26382B] placeholder-[#26382B]/50"
+                className="w-full bg-transparent border-none outline-none text-sm font-medium text-[#1A2E20] placeholder-[#68756A]"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="text-xs font-bold text-[#E91E63] hover:text-[#B01347] px-2 py-1"
+                  className="text-xs font-bold text-[#E91E63] hover:text-[#B01347] px-2 py-1 cursor-pointer"
                 >
                   Clear
                 </button>
@@ -129,23 +129,23 @@ export default function FlowerCatalogBrowser({
           <div className="flex items-center gap-3 justify-between md:justify-end">
             <button
               onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-              className="md:hidden flex items-center gap-2 px-4 py-2.5 bg-[#FFF9EF] border border-[#E9E4D8] rounded-xl text-xs font-bold text-[#701A40]"
+              className="md:hidden flex items-center gap-2 px-4 py-2.5 bg-[#104B26] text-white rounded-xl text-xs font-bold shadow-sm cursor-pointer"
             >
               <span>⚙️ Filters</span>
               {hasFilters && (
-                <span className="w-2 h-2 rounded-full bg-[#E91E63]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#F36B21]"></span>
               )}
             </button>
 
             <div className="flex items-center gap-2">
-              <label htmlFor="sort-select" className="text-xs font-bold text-[#26382B]/70 uppercase tracking-wider hidden sm:inline">
+              <label htmlFor="sort-select" className="text-xs font-bold text-[#68756A] uppercase tracking-wider hidden sm:inline">
                 Sort:
               </label>
               <select
                 id="sort-select"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-[#FFF9EF] border border-[#E9E4D8] rounded-xl px-3.5 py-2.5 text-xs font-bold text-[#26382B] outline-none cursor-pointer focus:border-[#701A40]"
+                className="bg-[#FFF9EF] border border-[#E9E4D8] rounded-xl px-3.5 py-2.5 text-xs font-bold text-[#1A2E20] outline-none cursor-pointer focus:border-[#104B26]"
               >
                 {SORT_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -160,11 +160,11 @@ export default function FlowerCatalogBrowser({
         {/* Active Filter Chips Row */}
         {hasFilters && (
           <div className="mt-4 pt-3 border-t border-[#E9E4D8]/60 flex items-center gap-2 flex-wrap text-xs">
-            <span className="text-[#26382B]/60 font-semibold">Active filters:</span>
+            <span className="text-[#68756A] font-semibold">Active filters:</span>
             {selectedCategory !== "all" && (
               <span
                 onClick={() => setSelectedCategory("all")}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#701A40]/10 text-[#701A40] font-bold border border-[#701A40]/20 cursor-pointer hover:bg-[#701A40]/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#104B26]/10 text-[#104B26] font-bold border border-[#104B26]/20 cursor-pointer hover:bg-[#104B26]/20 transition-colors"
               >
                 Variety: {selectedCategory} ✕
               </span>
@@ -172,7 +172,7 @@ export default function FlowerCatalogBrowser({
             {selectedOccasion !== "all" && (
               <span
                 onClick={() => setSelectedOccasion("all")}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E69A28]/15 text-[#701A40] font-bold border border-[#E69A28]/30 cursor-pointer hover:bg-[#E69A28]/25 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F36B21]/15 text-[#C44A08] font-bold border border-[#F36B21]/30 cursor-pointer hover:bg-[#F36B21]/25 transition-colors"
               >
                 Occasion: {selectedOccasion} ✕
               </span>
@@ -180,7 +180,7 @@ export default function FlowerCatalogBrowser({
             {selectedPackType !== "all" && (
               <span
                 onClick={() => setSelectedPackType("all")}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F36B21]/15 text-[#C44A08] font-bold border border-[#F36B21]/30 cursor-pointer hover:bg-[#F36B21]/25 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#78B82A]/15 text-[#104B26] font-bold border border-[#78B82A]/30 cursor-pointer hover:bg-[#78B82A]/25 transition-colors"
               >
                 Pack: {selectedPackType} ✕
               </span>
@@ -196,14 +196,14 @@ export default function FlowerCatalogBrowser({
             {searchQuery && (
               <span
                 onClick={() => setSearchQuery("")}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#26382B]/10 text-[#26382B] font-bold border border-[#26382B]/20 cursor-pointer hover:bg-[#26382B]/15 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#104B26]/10 text-[#104B26] font-bold border border-[#104B26]/20 cursor-pointer hover:bg-[#104B26]/15 transition-colors"
               >
                 Query: &quot;{searchQuery}&quot; ✕
               </span>
             )}
             <button
               onClick={resetFilters}
-              className="text-[#E91E63] font-bold underline hover:text-[#B01347] ml-2"
+              className="text-[#E91E63] font-bold underline hover:text-[#B01347] ml-2 cursor-pointer"
             >
               Reset All
             </button>
@@ -220,13 +220,13 @@ export default function FlowerCatalogBrowser({
           } lg:block bg-white rounded-2xl border border-[#E9E4D8] p-5 h-fit shadow-sm space-y-6 sticky top-24`}
         >
           <div className="flex items-center justify-between pb-3 border-b border-[#E9E4D8]">
-            <h2 className="font-display font-bold text-lg text-[#701A40] flex items-center gap-2">
+            <h2 className="font-display font-bold text-lg text-[#104B26] flex items-center gap-2">
               <span>🌿</span> Filter Catalog
             </h2>
             {hasFilters && (
               <button
                 onClick={resetFilters}
-                className="text-xs font-bold text-[#E91E63] hover:underline"
+                className="text-xs font-bold text-[#E91E63] hover:underline cursor-pointer"
               >
                 Reset All
               </button>
@@ -235,17 +235,17 @@ export default function FlowerCatalogBrowser({
 
           {/* Group 1: Flower Variety */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#26382B]/70 mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A] mb-3">
               Flower Varieties
             </h3>
             <div className="space-y-1">
               <button
                 type="button"
                 onClick={() => setSelectedCategory("all")}
-                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between ${
+                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between cursor-pointer ${
                   selectedCategory === "all"
-                    ? "bg-[#701A40] text-white shadow-sm"
-                    : "text-[#26382B] hover:bg-[#FFF9EF]"
+                    ? "bg-[#104B26] text-white shadow-sm"
+                    : "text-[#1A2E20] hover:bg-[#FFF9EF]"
                 }`}
               >
                 <span>🌸 All Flowers</span>
@@ -260,10 +260,10 @@ export default function FlowerCatalogBrowser({
                     key={cat.id}
                     type="button"
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-between cursor-pointer ${
                       active
-                        ? "bg-[#701A40] text-white shadow-sm"
-                        : "text-[#26382B] hover:bg-[#FFF9EF]"
+                        ? "bg-[#104B26] text-white shadow-sm"
+                        : "text-[#1A2E20] hover:bg-[#FFF9EF]"
                     }`}
                   >
                     <span className="truncate pr-2">
@@ -274,7 +274,7 @@ export default function FlowerCatalogBrowser({
                         className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                           active
                             ? "bg-white/20 text-white"
-                            : "bg-[#FFF9EF] text-[#701A40] border border-[#E9E4D8]"
+                            : "bg-[#FFF9EF] text-[#104B26] border border-[#E9E4D8]"
                         }`}
                       >
                         {count}
@@ -288,7 +288,7 @@ export default function FlowerCatalogBrowser({
 
           {/* Group 2: Occasion & Rituals */}
           <div className="pt-4 border-t border-[#E9E4D8]">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#26382B]/70 mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A] mb-3">
               Occasions & Rituals
             </h3>
             <div className="space-y-1">
@@ -299,10 +299,10 @@ export default function FlowerCatalogBrowser({
                     key={occ.id}
                     type="button"
                     onClick={() => setSelectedOccasion(occ.id)}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       active
-                        ? "bg-[#E69A28] text-white shadow-sm"
-                        : "text-[#26382B] hover:bg-[#FFF9EF]"
+                        ? "bg-[#F36B21] text-white shadow-sm"
+                        : "text-[#1A2E20] hover:bg-[#FFF9EF]"
                     }`}
                   >
                     {occ.label}
@@ -314,7 +314,7 @@ export default function FlowerCatalogBrowser({
 
           {/* Group 3: Pack Format */}
           <div className="pt-4 border-t border-[#E9E4D8]">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#26382B]/70 mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A] mb-3">
               Pack Format
             </h3>
             <div className="space-y-1">
@@ -325,10 +325,10 @@ export default function FlowerCatalogBrowser({
                     key={pt.id}
                     type="button"
                     onClick={() => setSelectedPackType(pt.id)}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       active
-                        ? "bg-[#F36B21] text-white shadow-sm"
-                        : "text-[#26382B] hover:bg-[#FFF9EF]"
+                        ? "bg-[#78B82A] text-white shadow-sm"
+                        : "text-[#1A2E20] hover:bg-[#FFF9EF]"
                     }`}
                   >
                     {pt.label}
@@ -339,8 +339,8 @@ export default function FlowerCatalogBrowser({
           </div>
 
           {/* Group 4: Budget / Price Tier */}
-          <div className="pt-4 border-t border-[#F0E2DA]">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C] mb-3">
+          <div className="pt-4 border-t border-[#E9E4D8]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A] mb-3">
               Filter by Price Range
             </h3>
             <div className="space-y-1">
@@ -351,10 +351,10 @@ export default function FlowerCatalogBrowser({
                     key={tier.id}
                     type="button"
                     onClick={() => setPriceRange(tier.id)}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+                    className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       active
-                        ? "bg-[#701A40] text-white shadow-sm"
-                        : "text-[#2D1B22] hover:bg-[#FDF2F6]"
+                        ? "bg-[#104B26] text-white shadow-sm"
+                        : "text-[#1A2E20] hover:bg-[#FFF9EF]"
                     }`}
                   >
                     {tier.label}
@@ -364,28 +364,28 @@ export default function FlowerCatalogBrowser({
             </div>
           </div>
 
-          {/* Group 5: Color Swatches (Template Kit Screen 2) */}
-          <div className="pt-4 border-t border-[#F0E2DA]">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C] mb-3">
+          {/* Group 5: Color Swatches */}
+          <div className="pt-4 border-t border-[#E9E4D8]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A] mb-3">
               Color Palette
             </h3>
             <div className="flex items-center gap-2 flex-wrap">
               {[
                 { name: "Red", hex: "#E11D48" },
-                { name: "Orange", hex: "#EA580C" },
+                { name: "Orange", hex: "#F36B21" },
                 { name: "Yellow", hex: "#F59E0B" },
-                { name: "Green", hex: "#16A34A" },
-                { name: "Cyan", hex: "#06B6D4" },
-                { name: "Blue", hex: "#2563EB" },
+                { name: "Green", hex: "#104B26" },
+                { name: "Leaf", hex: "#78B82A" },
+                { name: "Pink", hex: "#E91E63" },
                 { name: "Purple", hex: "#9333EA" },
-                { name: "Magenta", hex: "#701A40" },
+                { name: "White", hex: "#E5E7EB" },
               ].map((c) => (
                 <button
                   key={c.name}
                   type="button"
                   title={c.name}
                   onClick={() => setSearchQuery(c.name.toLowerCase())}
-                  className="w-6 h-6 rounded-full border border-black/10 shadow-sm transition-transform hover:scale-125 cursor-pointer focus:ring-2 focus:ring-[#701A40]"
+                  className="w-6 h-6 rounded-full border border-black/10 shadow-sm transition-transform hover:scale-125 cursor-pointer focus:ring-2 focus:ring-[#104B26]"
                   style={{ backgroundColor: c.hex }}
                 />
               ))}
@@ -397,11 +397,11 @@ export default function FlowerCatalogBrowser({
         <main>
           {/* Status Subtitle */}
           <div className="flex items-center justify-between mb-6">
-            <p className="text-sm font-semibold text-[#26382B]">
-              Showing <span className="font-bold text-[#701A40]">{filteredProducts.length}</span> fresh floral offerings
+            <p className="text-sm font-semibold text-[#1A2E20]">
+              Showing <span className="font-bold text-[#104B26]">{filteredProducts.length}</span> fresh floral offerings
             </p>
-            <div className="text-xs font-medium text-[#E69A28] flex items-center gap-1.5 bg-[#E69A28]/10 px-3 py-1 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#E69A28] animate-pulse"></span>
+            <div className="text-xs font-medium text-[#F36B21] flex items-center gap-1.5 bg-[#F36B21]/10 px-3 py-1 rounded-full border border-[#F36B21]/20">
+              <span className="w-2 h-2 rounded-full bg-[#F36B21] animate-pulse"></span>
               Harvested at dawn • Ready to ship
             </div>
           </div>
@@ -416,15 +416,16 @@ export default function FlowerCatalogBrowser({
           ) : (
             <div className="bg-white rounded-3xl border border-dashed border-[#E9E4D8] p-12 text-center shadow-sm">
               <div className="text-5xl mb-4">🌺</div>
-              <h3 className="font-display text-2xl font-bold text-[#701A40] mb-2">
+              <h3 className="font-display text-2xl font-bold text-[#104B26] mb-2">
                 No Flowers Found Matching Filters
               </h3>
-              <p className="text-sm text-[#26382B]/70 max-w-md mx-auto mb-6">
+              <p className="text-sm text-[#68756A] max-w-md mx-auto mb-6">
                 We couldn&apos;t find any varieties with the selected criteria. Try resetting filters or searching for marigold, rose, jasmine, or lotus.
               </p>
               <button
                 onClick={resetFilters}
                 className="btn-primary"
+                style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
               >
                 View Full Fresh Catalog
               </button>

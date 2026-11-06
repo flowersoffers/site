@@ -221,8 +221,8 @@ export default function HomePage() {
                         padding: "4px 14px",
                         borderRadius: "9999px",
                         backgroundColor: days <= 3 ? "rgba(243, 107, 33, 0.15)" : "#EAF4EE",
-                        color: days <= 3 ? "#F36B21" : "#701A40",
-                        border: `1px solid ${days <= 3 ? "#F36B21" : "#E69A28"}`,
+                        color: days <= 3 ? "#F36B21" : "#104B26",
+                        border: `1px solid ${days <= 3 ? "#F36B21" : "#78B82A"}`,
                       }}
                     >
                       {days <= 0 ? "🎉 Active Today" : `⏳ ${days} days away`}
@@ -288,13 +288,13 @@ export default function HomePage() {
                   >
                     {occ.name}
                   </h3>
-                  <div style={{ fontSize: "11px", fontWeight: 700, color: "#E69A28", fontFamily: "var(--font-hind), sans-serif", marginBottom: "8px" }}>
+                  <div style={{ fontSize: "11px", fontWeight: 700, color: "#F36B21", fontFamily: "var(--font-hind), sans-serif", marginBottom: "8px" }}>
                     {occ.nameHi}
                   </div>
                   <p style={{ fontSize: "0.825rem", color: "#68756A", lineHeight: 1.5, flex: 1 }}>
                     {occ.desc}
                   </p>
-                  <div style={{ fontSize: "12px", fontWeight: 700, color: "#701A40", marginTop: "14px" }}>
+                  <div style={{ fontSize: "12px", fontWeight: 700, color: "#104B26", marginTop: "14px" }}>
                     Explore ➔
                   </div>
                 </Link>

@@ -14,10 +14,10 @@ export function ProductCard({ product }: { product: Product }) {
     <article
       style={{
         backgroundColor: "#FFFFFF",
-        borderRadius: "24px",
+        borderRadius: "20px",
         overflow: "hidden",
-        border: hovered ? "1.5px solid #701A40" : "1.5px solid #F0E2DA",
-        boxShadow: hovered ? "0 14px 32px rgba(112, 26, 64, 0.12)" : "0 4px 14px rgba(112, 26, 64, 0.04)",
+        border: hovered ? "1.5px solid #104B26" : "1.5px solid #E8E4D8",
+        boxShadow: hovered ? "0 12px 28px rgba(16, 75, 38, 0.12)" : "0 2px 10px rgba(16, 75, 38, 0.04)",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         transition: "all 250ms ease",
         display: "flex",
@@ -31,7 +31,7 @@ export function ProductCard({ product }: { product: Product }) {
       {/* Product Image */}
       <Link
         href={`/flowers/${product.category}/${product.slug}`}
-        style={{ display: "block", position: "relative", aspectRatio: "1/1", overflow: "hidden", flexShrink: 0, backgroundColor: "#FFF8F2" }}
+        style={{ display: "block", position: "relative", aspectRatio: "1/1", overflow: "hidden", flexShrink: 0, backgroundColor: "#FFF9EF" }}
       >
         <img
           src={product.imageUrl}
@@ -42,25 +42,25 @@ export function ProductCard({ product }: { product: Product }) {
             height: "100%",
             objectFit: "cover",
             transition: "transform 400ms ease",
-            transform: hovered ? "scale(1.06)" : "scale(1)",
+            transform: hovered ? "scale(1.05)" : "scale(1)",
           }}
         />
 
-        {/* Badge (Template Kit style) */}
+        {/* Badge (Forest Green or Marigold Orange) */}
         {product.badge && (
-          <div style={{ position: "absolute", top: "12px", left: "12px" }}>
+          <div style={{ position: "absolute", top: "10px", left: "10px" }}>
             <span
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "4px",
-                padding: "4px 10px",
+                padding: "3px 9px",
                 borderRadius: "9999px",
                 fontSize: "10px",
                 fontWeight: 800,
                 letterSpacing: "0.5px",
                 textTransform: "uppercase",
-                backgroundColor: product.badge === "bestseller" ? "#701A40" : "#E69A28",
+                backgroundColor: product.badge === "bestseller" ? "#104B26" : "#F36B21",
                 color: "#FFFFFF",
                 boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
               }}
@@ -68,75 +68,75 @@ export function ProductCard({ product }: { product: Product }) {
               {product.badge === "bestseller" && "⭐ Bestseller"}
               {product.badge === "new" && "✨ Fresh Arrival"}
               {product.badge === "seasonal" && "🌸 Seasonal"}
-              {product.badge === "bulk-popular" && "📦 Luxury Choice"}
+              {product.badge === "bulk-popular" && "📦 Wholesale Favorite"}
             </span>
           </div>
         )}
 
-        {/* Freshness Indicator */}
-        <div style={{ position: "absolute", bottom: "10px", left: "12px" }}>
+        {/* Certified Freshness Pill */}
+        <div style={{ position: "absolute", bottom: "10px", left: "10px" }}>
           <span
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: "4px",
               padding: "3px 9px",
-              backgroundColor: "rgba(255, 255, 255, 0.92)",
-              backdropFilter: "blur(8px)",
+              backgroundColor: "rgba(255, 255, 255, 0.94)",
+              backdropFilter: "blur(6px)",
               borderRadius: "9999px",
-              color: "#701A40",
+              color: "#104B26",
               fontSize: "10.5px",
               fontWeight: 700,
-              border: "1px solid rgba(112, 26, 64, 0.15)",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+              border: "1px solid rgba(16, 75, 38, 0.18)",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.06)",
             }}
           >
-            🌸 Certified Fresh
+            🌿 Dawn Plucked
           </span>
         </div>
       </Link>
 
       {/* Content */}
-      <div style={{ padding: "18px", display: "flex", flexDirection: "column", flex: 1, backgroundColor: "#FFFFFF" }}>
+      <div style={{ padding: "16px", display: "flex", flexDirection: "column", flex: 1, backgroundColor: "#FFFFFF" }}>
         <Link href={`/flowers/${product.category}/${product.slug}`} style={{ textDecoration: "none", flex: 1 }}>
           <h3
             style={{
               fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: "1.15rem",
+              fontSize: "1.1rem",
               fontWeight: 700,
-              color: "#2D1B22",
+              color: "#104B26",
               marginBottom: "3px",
               lineHeight: 1.3,
             }}
           >
             {product.nameEn}
           </h3>
-          <p style={{ fontSize: "12px", color: "#7A646C", fontFamily: "var(--font-hind), sans-serif", fontWeight: 500, marginBottom: "10px" }}>
+          <p style={{ fontSize: "12px", color: "#68756A", fontFamily: "var(--font-hind), sans-serif", fontWeight: 600, marginBottom: "8px" }}>
             {product.nameHi}
           </p>
         </Link>
 
-        {/* Price & Royal Plum Add to Cart Button (Screen 2) */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "12px", borderTop: "1px solid #F0E2DA" }}>
+        {/* Price & Forest Green Add to Cart Button */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "10px", borderTop: "1px solid #E8E4D8" }}>
           <div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: "4px" }}>
-              <span style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontWeight: 800, fontSize: "1.45rem", color: "#701A40" }}>
+            <div style={{ display: "flex", alignItems: "baseline", gap: "3px" }}>
+              <span style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontWeight: 800, fontSize: "1.35rem", color: "#104B26" }}>
                 ₹{product.pricePerUnit}
               </span>
-              <span style={{ fontSize: "12px", color: "#7A646C", fontWeight: 600 }}>/{product.unit}</span>
+              <span style={{ fontSize: "11px", color: "#68756A", fontWeight: 600 }}>/{product.unit}</span>
             </div>
             {product.bulkPricePerKg > 0 && (
               <span
                 style={{
                   display: "inline-block",
-                  fontSize: "11px",
+                  fontSize: "10px",
                   fontWeight: 700,
-                  color: "#E69A28",
-                  backgroundColor: "#FFF7ED",
+                  color: "#F36B21",
+                  backgroundColor: "#FFF3EB",
                   borderRadius: "6px",
                   padding: "1px 6px",
                   marginTop: "2px",
-                  border: "1px solid #FED7AA",
+                  border: "1px solid #FFE0B2",
                 }}
               >
                 Wholesale: ₹{product.bulkPricePerKg}/kg
@@ -144,7 +144,7 @@ export function ProductCard({ product }: { product: Product }) {
             )}
           </div>
 
-          {/* Round Royal Plum Cart Button (Matching Screen 2 in Template Kit) */}
+          {/* Round Forest Green Cart Button (White Text) */}
           <button
             type="button"
             onClick={() => {
@@ -154,26 +154,26 @@ export function ProductCard({ product }: { product: Product }) {
             }}
             aria-label={added ? "Added to cart" : `Add ${product.nameEn} to cart`}
             style={{
-              width: "42px",
-              height: "42px",
+              width: "40px",
+              height: "40px",
               borderRadius: "50%",
               border: "none",
-              backgroundColor: added ? "#E69A28" : "#701A40",
+              backgroundColor: added ? "#78B82A" : "#104B26",
               color: "#FFFFFF",
-              fontSize: "17px",
+              fontSize: "16px",
               fontWeight: 800,
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: added ? "0 4px 12px rgba(230, 154, 40, 0.4)" : "0 4px 14px rgba(112, 26, 64, 0.3)",
+              boxShadow: added ? "0 4px 12px rgba(120, 184, 42, 0.4)" : "0 4px 12px rgba(16, 75, 38, 0.3)",
               transition: "all 200ms ease",
             }}
           >
             {added ? (
               "✓"
             ) : (
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.2">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
@@ -191,8 +191,8 @@ export default function ProductGrid({ products }: { products: Product[] }) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-        gap: "24px",
+        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+        gap: "20px",
       }}
       role="list"
       aria-label="Fresh Flowers"

@@ -97,61 +97,68 @@ export default function BlogListingPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#FFF8F2] py-12 sm:py-16">
+      <main className="min-h-screen bg-[#FFF9EF] py-12 sm:py-16">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
 
-          {/* ── Section Header (Screen 8) ── */}
+          {/* ── Section Header ── */}
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="px-3.5 py-1 rounded-full bg-[#FDF2F6] border border-[#F0E2DA] text-[#701A40] text-xs font-bold tracking-wider uppercase inline-block mb-3">
+            <span
+              className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3"
+              style={{
+                backgroundColor: "#EAF4EE",
+                color: "#104B26",
+                border: "1px solid rgba(16, 75, 38, 0.2)",
+              }}
+            >
               Editorial Journal
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2D1B22] mb-2">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1A2E20] mb-2">
               Flower Stories
             </h1>
-            <p className="font-serif text-lg text-[#701A40]">
+            <p className="font-serif text-lg text-[#104B26]">
               Ideas, Care Tips &amp; Inspiration
             </p>
           </div>
 
-          {/* ── Top 3 Flagship Article Cards (Screen 8) ── */}
+          {/* ── Top 3 Flagship Article Cards ── */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
             {topThree.map((post) => (
               <article
                 key={post.slug}
-                className="bg-white rounded-3xl overflow-hidden border border-[#F0E2DA] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
+                className="bg-white rounded-3xl overflow-hidden border border-[#E9E4D8] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#FFF8F2]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#FFF9EF]">
                   <img
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10.5px] font-bold text-[#701A40] border border-[#F0E2DA] shadow-sm">
+                  <span className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10.5px] font-bold text-[#104B26] border border-[#E9E4D8] shadow-sm">
                     {post.category}
                   </span>
                 </div>
 
                 <div className="p-6 flex flex-col flex-1 justify-between">
                   <div>
-                    <div className="text-[11px] font-semibold text-[#7A646C] mb-2">
+                    <div className="text-[11px] font-semibold text-[#68756A] mb-2">
                       {post.date} • {post.readTime}
                     </div>
 
-                    <h2 className="font-serif font-bold text-xl text-[#2D1B22] group-hover:text-[#701A40] transition-colors mb-2.5 leading-snug">
+                    <h2 className="font-serif font-bold text-xl text-[#1A2E20] group-hover:text-[#104B26] transition-colors mb-2.5 leading-snug">
                       <Link href={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
                     </h2>
 
-                    <p className="text-xs text-[#7A646C] leading-relaxed line-clamp-3">
+                    <p className="text-xs text-[#68756A] leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-[#F0E2DA]">
+                  <div className="pt-4 mt-4 border-t border-[#E9E4D8]">
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#701A40] group-hover:text-[#5B1435]"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#104B26] group-hover:text-[#0B351B]"
                     >
                       <span>Read Article</span>
                       <span>→</span>
@@ -162,23 +169,23 @@ export default function BlogListingPage() {
             ))}
           </div>
 
-          {/* ── Center CTA: Read All Articles (Screen 8) ── */}
+          {/* ── Center CTA: Explore Flowers ── */}
           <div className="text-center mb-16">
             <Link
               href="/flowers"
-              className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg"
-              style={{ backgroundColor: "#701A40", color: "#FFFFFF" }}
+              className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold text-sm shadow-md hover:shadow-lg cursor-pointer"
+              style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
             >
-              <span>Explore Flowers Inspired by Stories</span>
-              <span>→</span>
+              <span style={{ color: "#FFFFFF" }}>Explore Flowers Inspired by Stories</span>
+              <span style={{ color: "#FFFFFF" }}>→</span>
             </Link>
           </div>
 
           {/* ── Additional Festive & Care Guides ── */}
           {remaining.length > 0 && (
             <div>
-              <div className="border-b border-[#F0E2DA] pb-4 mb-8">
-                <h3 className="font-display text-2xl font-semibold text-[#2D1B22]">
+              <div className="border-b border-[#E9E4D8] pb-4 mb-8">
+                <h3 className="font-display text-2xl font-semibold text-[#1A2E20]">
                   More Floral Traditions &amp; Harvest Guides
                 </h3>
               </div>
@@ -187,25 +194,25 @@ export default function BlogListingPage() {
                 {remaining.map((post) => (
                   <article
                     key={post.slug}
-                    className="bg-white rounded-2xl p-5 border border-[#F0E2DA] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                    className="bg-white rounded-2xl p-5 border border-[#E9E4D8] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
                   >
                     <div>
-                      <span className="text-[10px] font-bold text-[#701A40] uppercase">
+                      <span className="text-[10px] font-bold text-[#104B26] uppercase">
                         {post.category}
                       </span>
-                      <h4 className="font-serif font-bold text-base text-[#2D1B22] mt-1 mb-2 hover:text-[#701A40]">
+                      <h4 className="font-serif font-bold text-base text-[#1A2E20] mt-1 mb-2 hover:text-[#104B26]">
                         <Link href={`/blog/${post.slug}`}>
                           {post.title}
                         </Link>
                       </h4>
-                      <p className="text-xs text-[#7A646C] line-clamp-2">
+                      <p className="text-xs text-[#68756A] line-clamp-2">
                         {post.excerpt}
                       </p>
                     </div>
 
-                    <div className="pt-3 mt-3 border-t border-[#F0E2DA] text-[11px] text-[#7A646C] flex justify-between items-center">
+                    <div className="pt-3 mt-3 border-t border-[#E9E4D8] text-[11px] text-[#68756A] flex justify-between items-center">
                       <span>{post.date}</span>
-                      <Link href={`/blog/${post.slug}`} className="text-[#701A40] font-bold hover:underline">
+                      <Link href={`/blog/${post.slug}`} className="text-[#104B26] font-bold hover:underline">
                         Read →
                       </Link>
                     </div>
@@ -219,7 +226,7 @@ export default function BlogListingPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="919876543210" />
+      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
       <TemplateKitBar />
     </>
   );

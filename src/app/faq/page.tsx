@@ -72,9 +72,9 @@ export default function FAQPage() {
 
       <main className="min-h-screen bg-[#FFF9EF]">
         {/* ── Hero Banner ── */}
-        <section className="bg-gradient-to-r from-[#5B1435] via-[#701A40] to-[#185E31] text-white py-14 sm:py-16 px-4 text-center">
+        <section className="bg-gradient-to-r from-[#0B351B] via-[#104B26] to-[#0D3D1E] text-white py-14 sm:py-16 px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="inline-block bg-white/15 text-[#E69A28] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
+            <span className="inline-block bg-white/15 text-[#F36B21] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
               ❓ Knowledge Base & Assistance
             </span>
             <h1 className="text-3xl sm:text-5xl font-display font-black mb-2 leading-tight">
@@ -94,11 +94,11 @@ export default function FAQPage() {
                 key={idx}
                 className="bg-white p-6 sm:p-7 rounded-3xl border border-[#E9E4D8] shadow-sm space-y-2.5"
               >
-                <h3 className="font-display font-black text-base sm:text-lg text-[#701A40] flex items-start gap-2.5">
+                <h3 className="font-display font-black text-base sm:text-lg text-[#104B26] flex items-start gap-2.5">
                   <span className="text-[#F36B21] font-sans">Q{idx + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
-                <p className="text-xs sm:text-sm text-[#26382B]/80 leading-relaxed pl-7">
+                <p className="text-xs sm:text-sm text-[#1A2E20]/80 leading-relaxed pl-7">
                   {faq.a}
                 </p>
               </div>
@@ -107,21 +107,25 @@ export default function FAQPage() {
 
           {/* Quick Help Card */}
           <div className="mt-10 bg-white rounded-3xl border border-[#E9E4D8] p-6 text-center max-w-lg mx-auto shadow-sm">
-            <h4 className="font-display font-bold text-base text-[#701A40] mb-1">
+            <h4 className="font-display font-bold text-base text-[#104B26] mb-1">
               Still have questions about your flower order?
             </h4>
-            <p className="text-xs text-[#26382B]/70 mb-4">
+            <p className="text-xs text-[#68756A] mb-4">
               Our floral support team is available on WhatsApp every morning from 6:00 AM onwards.
             </p>
             <div className="flex gap-3 justify-center">
-              <Link href="/contact" className="btn-secondary text-xs px-5 py-2.5">
+              <Link
+                href="/contact"
+                className="btn text-xs px-5 py-2.5 rounded-full font-bold border border-[#104B26] text-[#104B26] hover:bg-[#104B26] hover:text-white transition-all cursor-pointer"
+              >
                 Contact Page
               </Link>
               <a
                 href="https://wa.me/91XXXXXXXXXX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-xs px-5 py-2.5"
+                className="btn-primary text-xs px-5 py-2.5 rounded-full font-bold shadow-sm cursor-pointer"
+                style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
               >
                 💬 Chat on WhatsApp
               </a>

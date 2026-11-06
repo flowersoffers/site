@@ -19,7 +19,7 @@ export default function AboutPage() {
   const pillars = [
     {
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#701A40" strokeWidth="2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#104B26" strokeWidth="2">
           <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
         </svg>
       ),
@@ -28,7 +28,7 @@ export default function AboutPage() {
     },
     {
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#701A40" strokeWidth="2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#104B26" strokeWidth="2">
           <path d="M12 20h9" />
           <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
         </svg>
@@ -38,7 +38,7 @@ export default function AboutPage() {
     },
     {
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#701A40" strokeWidth="2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#104B26" strokeWidth="2">
           <polyline points="20 12 20 22 4 22 4 12" />
           <rect x="2" y="7" width="20" height="5" />
           <line x1="12" y1="22" x2="12" y2="7" />
@@ -51,7 +51,7 @@ export default function AboutPage() {
     },
     {
       icon: (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#701A40" strokeWidth="2">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#104B26" strokeWidth="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
         </svg>
       ),
@@ -64,32 +64,39 @@ export default function AboutPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#FFF8F2] pb-16">
-        {/* ── Screen 5 Showcase Hero ── */}
+      <main className="min-h-screen bg-[#FFF9EF] pb-16">
+        {/* ── Showcase Hero ── */}
         <section className="max-w-[1280px] mx-auto px-5 sm:px-8 pt-12 pb-16">
-          <div className="bg-white rounded-3xl border border-[#F0E2DA] p-8 sm:p-14 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="bg-white rounded-3xl border border-[#E9E4D8] p-8 sm:p-14 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
             {/* Left Narrative Column */}
             <div className="lg:col-span-7 flex flex-col items-start">
-              <span className="px-3.5 py-1.5 rounded-full bg-[#FDF2F6] border border-[#F0E2DA] text-[#701A40] text-xs font-bold tracking-wider uppercase mb-4">
+              <span
+                className="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-4"
+                style={{
+                  backgroundColor: "#EAF4EE",
+                  color: "#104B26",
+                  border: "1px solid rgba(16, 75, 38, 0.2)",
+                }}
+              >
                 About FlowersOffers®
               </span>
 
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2D1B22] leading-tight mb-2">
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1A2E20] leading-tight mb-2">
                 An Expression of Emotion
               </h1>
 
-              <p className="font-serif text-lg sm:text-xl text-[#701A40] mb-6">
+              <p className="font-serif text-lg sm:text-xl text-[#104B26] mb-6">
                 Curating Life’s Most Beautiful Moments With Fresh Farm Blooms
               </p>
 
-              <p className="text-[#7A646C] text-sm sm:text-base leading-relaxed mb-6 font-serif">
+              <p className="text-[#68756A] text-sm sm:text-base leading-relaxed mb-6 font-serif">
                 At FlowersOffers®, we believe flowers are more than just gifts — they are emotions,
                 memories, and meaningful connections. We curate fresh, premium and thoughtfully designed floral
                 arrangements for every sacred ritual and joyful celebration in your life.
               </p>
 
-              <p className="text-[#7A646C] text-sm sm:text-base leading-relaxed mb-8">
+              <p className="text-[#68756A] text-sm sm:text-base leading-relaxed mb-8">
                 By eliminating middlemen and connecting grower clusters directly with doorsteps across India,
                 we ensure our flowers arrive with unmatched morning dew freshness, while ensuring fair dignity
                 and guaranteed compensation for our hardworking farmers.
@@ -98,29 +105,29 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/flowers"
-                  className="btn-primary px-8 py-3.5 rounded-full font-bold text-sm shadow-md"
-                  style={{ backgroundColor: "#701A40", color: "#FFFFFF" }}
+                  className="btn-primary px-8 py-3.5 rounded-full font-bold text-sm shadow-md cursor-pointer"
+                  style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
                 >
                   Explore Collections →
                 </Link>
                 <Link
                   href="/farmers"
-                  className="btn-outline px-7 py-3 rounded-full font-bold text-sm border-2 border-[#701A40] text-[#701A40]"
+                  className="px-7 py-3 rounded-full font-bold text-sm border-2 border-[#104B26] text-[#104B26] hover:bg-[#104B26] hover:text-white transition-all cursor-pointer"
                 >
                   Our Farmer Network 🌾
                 </Link>
               </div>
             </div>
 
-            {/* Right Storefront Boutique Image (Screen 5) */}
+            {/* Right Storefront Boutique Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border-2 border-[#F0E2DA] shadow-2xl aspect-[4/3] bg-[#FFF8F2]">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-[#E9E4D8] shadow-2xl aspect-[4/3] bg-[#FFF9EF]">
                 <img
                   src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=900&q=85&fit=crop"
                   alt="FlowersOffers boutique storefront and artisanal floral arrangements"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#5B1435]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B351B]/85 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="flex items-center gap-2 mb-1">
                     <BrandLogo variant="white" size="sm" showTagline={false} />
                   </div>
@@ -134,13 +141,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 4 Pillars (Screen 5 Bottom Row) ── */}
+        {/* ── 4 Pillars ── */}
         <section className="max-w-[1280px] mx-auto px-5 sm:px-8 pb-16">
           <div className="text-center mb-10">
-            <h2 className="font-display text-2xl sm:text-3xl text-[#2D1B22] font-semibold">
+            <h2 className="font-display text-2xl sm:text-3xl text-[#1A2E20] font-semibold">
               The FlowersOffers® Promise
             </h2>
-            <p className="font-serif text-sm text-[#7A646C] mt-1">
+            <p className="font-serif text-sm text-[#68756A] mt-1">
               Four Uncompromising Standards That Guide Every Blossom We Deliver
             </p>
           </div>
@@ -149,15 +156,15 @@ export default function AboutPage() {
             {pillars.map((p, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#F0E2DA] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-start"
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E9E4D8] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-start"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#FDF2F6] flex items-center justify-center mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#EAF4EE] flex items-center justify-center mb-5">
                   {p.icon}
                 </div>
-                <h3 className="font-serif font-bold text-lg text-[#2D1B22] mb-2">
+                <h3 className="font-serif font-bold text-lg text-[#1A2E20] mb-2">
                   {p.title}
                 </h3>
-                <p className="text-xs text-[#7A646C] leading-relaxed">
+                <p className="text-xs text-[#68756A] leading-relaxed">
                   {p.desc}
                 </p>
               </div>

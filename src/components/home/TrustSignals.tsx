@@ -6,42 +6,42 @@ const VALUE_PILLARS = [
     title: "Farmer-Direct Sourcing",
     titleHi: "सीधे किसान से",
     desc: "Harvested directly at flower grower clusters with no unnecessary middle trading.",
-    accent: "#701A40",
+    accent: "#104B26", // Forest Green
   },
   {
     icon: "⚡",
     title: "Harvest-Day Freshness",
     titleHi: "प्रातःकाल ताज़गी",
     desc: "Packed in ventilated, climate-conscious cartons to preserve crisp petals and natural scent.",
-    accent: "#E69A28",
+    accent: "#F36B21", // Marigold Orange
   },
   {
     icon: "💰",
     title: "Transparent Value",
     titleHi: "उचित पारदर्शी मूल्य",
     desc: "Fair compensation for flower growers and competitive, honest prices for families & institutions.",
-    accent: "#701A40",
+    accent: "#78B82A", // Leaf Green
   },
   {
     icon: "🪔",
     title: "Sacred Pooja Sanctity",
     titleHi: "पवित्र व शुद्ध पुष्प",
     desc: "Carefully handled according to traditional Indian ritual standards for temple & home mandirs.",
-    accent: "#E91E63", // Floral Pink accent
+    accent: "#E91E63", // Floral Pink
   },
   {
     icon: "📦",
     title: "Bulk B2B Capacity",
     titleHi: "थोक आपूर्ति सुविधा",
     desc: "Dedicated quotation and logistics support for weddings, decorators, hotels, and temple trusts.",
-    accent: "#701A40",
+    accent: "#104B26", // Forest Green
   },
   {
     icon: "📍",
     title: "Convenient Scheduling",
     titleHi: "सुविधाजनक डिलीवरी",
     desc: "Morning and evening delivery slots scheduled to reach your venue right before puja muhurats.",
-    accent: "#F36B21", // Marigold Orange accent
+    accent: "#F36B21", // Marigold Orange
   },
 ];
 
@@ -67,6 +67,7 @@ export default function TrustSignals() {
           <p className="section-desc" style={{ margin: "0 auto" }}>
             Combining botanical boutique quality with the efficiency of modern agricultural commerce
           </p>
+          <div className="section-divider section-divider-center" />
         </div>
 
         {/* 6 Value Cards */}

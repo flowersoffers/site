@@ -51,7 +51,7 @@ export default function PincodeChecker() {
             setPincode(e.target.value.replace(/\D/g, ""));
             if (status !== "idle") setStatus("idle");
           }}
-          className="flex-1 bg-white border border-[#E9E4D8] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-[#26382B] font-semibold outline-none focus:border-[#701A40] min-h-[42px]"
+          className="flex-1 bg-white border border-[#E9E4D8] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-[#1A2E20] font-semibold outline-none focus:border-[#104B26] min-h-[42px]"
           aria-label="Pincode input"
         />
         <button

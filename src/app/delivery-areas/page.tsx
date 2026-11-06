@@ -18,7 +18,7 @@ export default function DeliveryAreasPage() {
   const regions = [
     {
       tier: "⚡ Same-Day Express Hubs (Harvest to Doorstep in 6-12 Hrs)",
-      color: "border-[#701A40] bg-[#701A40]/5",
+      color: "border-[#104B26] bg-[#104B26]/5",
       badge: "Same-Day Sunrise Dispatch",
       states: [
         {
@@ -45,7 +45,7 @@ export default function DeliveryAreasPage() {
     },
     {
       tier: "🚚 Next-Day Express Delivery (Harvest to Doorstep in 24 Hrs)",
-      color: "border-[#E69A28] bg-[#E69A28]/5",
+      color: "border-[#F36B21] bg-[#F36B21]/5",
       badge: "Next-Day Morning Slot",
       states: [
         {
@@ -76,7 +76,7 @@ export default function DeliveryAreasPage() {
     },
     {
       tier: "📦 48-Hour Specialized Cold-Transit (All India Bulk & District Network)",
-      color: "border-[#F36B21] bg-[#F36B21]/5",
+      color: "border-[#78B82A] bg-[#78B82A]/5",
       badge: "Institutional & Mandir Bulk",
       states: [
         {
@@ -101,9 +101,9 @@ export default function DeliveryAreasPage() {
 
       <main className="min-h-screen bg-[#FFF9EF]">
         {/* ── Hero Banner ── */}
-        <section className="bg-gradient-to-r from-[#5B1435] via-[#701A40] to-[#185E31] text-white py-14 sm:py-16 px-4 text-center">
+        <section className="bg-gradient-to-r from-[#0B351B] via-[#104B26] to-[#0D3D1E] text-white py-14 sm:py-16 px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <span className="inline-block bg-white/15 text-[#E69A28] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
+            <span className="inline-block bg-white/15 text-[#F36B21] px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-white/20">
               📍 Nationwide Sourcing & Supply Footprint
             </span>
             <h1 className="text-3xl sm:text-5xl font-display font-black mb-2 leading-tight">
@@ -118,10 +118,10 @@ export default function DeliveryAreasPage() {
         {/* ── Instant PIN Code Checker Section ── */}
         <section className="max-w-3xl mx-auto px-4 -mt-6 relative z-20">
           <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E9E4D8] shadow-sm text-center">
-            <h2 className="font-display font-black text-xl text-[#701A40] mb-1">
+            <h2 className="font-display font-black text-xl text-[#104B26] mb-1">
               Check Immediate Delivery Slots for Your PIN Code
             </h2>
-            <p className="text-xs text-[#26382B]/70 mb-4">
+            <p className="text-xs text-[#68756A] mb-4">
               Enter your 6-digit Indian PIN code to view sunrise pooja delivery times
             </p>
             <PincodeChecker />
@@ -136,10 +136,10 @@ export default function DeliveryAreasPage() {
               className={`p-6 sm:p-8 rounded-3xl border ${tier.color} bg-white shadow-sm space-y-6`}
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E9E4D8] pb-4">
-                <h3 className="font-display font-black text-xl text-[#701A40]">
+                <h3 className="font-display font-black text-xl text-[#104B26]">
                   {tier.tier}
                 </h3>
-                <span className="text-xs font-bold text-[#701A40] bg-[#701A40]/10 px-3.5 py-1 rounded-full w-fit">
+                <span className="text-xs font-bold text-[#104B26] bg-[#104B26]/10 px-3.5 py-1 rounded-full w-fit">
                   {tier.badge}
                 </span>
               </div>
@@ -147,10 +147,10 @@ export default function DeliveryAreasPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {tier.states.map((st, i) => (
                   <div key={i} className="p-4 rounded-2xl bg-[#FFF9EF] border border-[#E9E4D8]">
-                    <h4 className="font-bold text-sm text-[#701A40] mb-1">
+                    <h4 className="font-bold text-sm text-[#104B26] mb-1">
                       {st.state}
                     </h4>
-                    <p className="text-xs text-[#26382B]/75 leading-relaxed">
+                    <p className="text-xs text-[#1A2E20]/75 leading-relaxed">
                       {st.cities}
                     </p>
                   </div>
@@ -161,13 +161,17 @@ export default function DeliveryAreasPage() {
 
           {/* Prompt for Unlisted Regions */}
           <div className="bg-white rounded-3xl border border-[#E9E4D8] p-7 text-center max-w-2xl mx-auto shadow-sm">
-            <h4 className="font-display font-bold text-lg text-[#701A40] mb-1">
+            <h4 className="font-display font-bold text-lg text-[#104B26] mb-1">
               Don&apos;t see your specific town or village listed?
             </h4>
-            <p className="text-xs text-[#26382B]/70 leading-relaxed mb-4">
+            <p className="text-xs text-[#68756A] leading-relaxed mb-4">
               We frequently dispatch bulk orders via regional bus terminals and train networks to remote mandirs and event halls.
             </p>
-            <Link href="/contact" className="btn-primary text-xs px-6 py-2.5 inline-block">
+            <Link
+              href="/contact"
+              className="btn-primary text-xs px-6 py-2.5 rounded-full inline-block font-bold cursor-pointer"
+              style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
+            >
               Inquire About Custom Delivery
             </Link>
           </div>

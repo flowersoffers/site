@@ -18,7 +18,7 @@ export default function BulkOrderCTA() {
         position: "relative",
         overflow: "hidden",
         padding: "80px 24px",
-        backgroundColor: "#5B1435", // Royal Wine Plum
+        backgroundColor: "#104B26", // Forest Green primary
         color: "#FFF9EF",
       }}
       aria-label="Bulk flower supply"
@@ -40,11 +40,11 @@ export default function BulkOrderCTA() {
               letterSpacing: "1px",
             }}
           >
-            📦 Dedicated B2B & Institutional Supply
+            📦 Dedicated B2B & Wholesale Supply
           </span>
         </div>
 
-        {/* Headline (Master Brief Section 7) */}
+        {/* Headline */}
         <h2
           className="font-display"
           style={{
@@ -56,7 +56,7 @@ export default function BulkOrderCTA() {
             marginBottom: "12px",
           }}
         >
-          Your Trusted Partner for Bulk Flower Supply.
+          Your Direct Partner for Wholesale Flower Supply.
         </h2>
 
         <p
@@ -67,7 +67,7 @@ export default function BulkOrderCTA() {
             color: "#FFF9EF",
             textAlign: "center",
             marginBottom: "12px",
-            opacity: 0.9,
+            opacity: 0.95,
           }}
         >
           शादी, मंदिर व महोत्सव हेतु सीधे खेत से थोक फूल आपूर्ति • पारदर्शी कोटेशन
@@ -76,14 +76,14 @@ export default function BulkOrderCTA() {
         <p
           style={{
             fontSize: "0.95rem",
-            color: "rgba(255, 249, 239, 0.8)",
+            color: "rgba(255, 249, 239, 0.85)",
             textAlign: "center",
             maxWidth: "680px",
             margin: "0 auto 36px",
             lineHeight: 1.6,
           }}
         >
-          From 10 kg daily temple puja flowers to 500+ kg wedding floral arrangements, we harvest to order and dispatch in temperature-monitored crates to your event venue.
+          From 10 kg daily temple puja flowers to 500+ kg wedding floral arrangements, we harvest to order and dispatch in temperature-monitored crates to your venue across India.
         </p>
 
         {/* Target Buyers Chips */}
@@ -104,9 +104,9 @@ export default function BulkOrderCTA() {
                 fontWeight: 600,
                 padding: "8px 16px",
                 borderRadius: "9999px",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(255, 255, 255, 0.12)",
                 color: "#FFFFFF",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                border: "1px solid rgba(255, 255, 255, 0.25)",
               }}
             >
               {c.icon} {c.label}
@@ -118,14 +118,16 @@ export default function BulkOrderCTA() {
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "16px" }}>
           <Link
             href="/bulk-orders"
-            className="btn btn-gold"
+            className="btn"
             style={{
-              backgroundColor: "#E69A28",
+              backgroundColor: "#F36B21", // Marigold Orange
               color: "#FFFFFF",
               fontWeight: 800,
               fontSize: "1rem",
               padding: "16px 36px",
-              boxShadow: "0 8px 24px rgba(230, 154, 40, 0.4)",
+              borderRadius: "9999px",
+              boxShadow: "0 8px 24px rgba(243, 107, 33, 0.4)",
+              textDecoration: "none",
             }}
           >
             📋 Request a Bulk Quotation ➔
@@ -135,7 +137,15 @@ export default function BulkOrderCTA() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-white"
-            style={{ fontSize: "1rem", padding: "16px 32px", color: "#FFFFFF" }}
+            style={{
+              fontSize: "1rem",
+              padding: "16px 32px",
+              color: "#FFFFFF",
+              borderRadius: "9999px",
+              border: "2px solid #FFFFFF",
+              fontWeight: 700,
+              textDecoration: "none",
+            }}
           >
             💬 WhatsApp B2B Concierge
           </a>

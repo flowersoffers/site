@@ -1,0 +1,635 @@
+// ==============================================================================
+// FLOWERSOFFERS.COM - PRODUCTION RELATIONAL MARKETPLACE DATABASE SCHEMA
+// Supports B2B Wholesale, Farmers, Distributors, Retailers, and Operations
+// ==============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ── 1. USER & ROLE-BASED ACCESS CONTROL (RBAC) ──
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  phone         String    @unique
+  name          String
+  passwordHash  String
+  role          String    @default("CUSTOMER") // SUPER_ADMIN, FARMER, DISTRIBUTOR, RETAILER, CUSTOMER, DELIVERY
+  status        String    @default("ACTIVE")   // PENDING_APPROVAL, ACTIVE, SUSPENDED, REJECTED
+  avatarUrl     String?
+  emailVerified DateTime?
+  phoneVerified DateTime?
+  lastLoginAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Profiles
+  farmerProfile      FarmerProfile?
+  distributorProfile DistributorProfile?
+  retailerProfile    RetailerProfile?
+  deliveryProfile    DeliveryProfile?
+
+  // Associated marketplace activity
+  orders             Order[]            @relation("BuyerOrders")
+  assignedDeliveries Shipment[]         @relation("AssignedDeliveryStaff")
+  supplierProducts   SupplierProduct[]
+  purchaseOrdersAsBuyer PurchaseOrder[] @relation("DistributorPurchaseOrders")
+  purchaseOrdersAsSeller PurchaseOrder[] @relation("SupplierPurchaseOrders")
+  reviews            Review[]
+  ledgers            Ledger[]
+  settlements        Settlement[]
+  auditLogs          AuditLog[]
+  carts              Cart[]
+
+  @@index([role, status])
+  @@index([phone])
+  @@index([email])
+}
+
+model FarmerProfile {
+  id               String    @id @default(cuid())
+  userId           String    @unique
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  farmName         String
+  state            String
+  district         String
+  village          String?
+  farmAddress      String
+  geoLat           Float?
+  geoLng           Float?
+  cultivatedAreaAcres Float?
+  flowerVarieties  String    // JSON string array of varieties grown
+  dailyCapacityKg  Float     @default(0)
+  minOrderQtyKg    Float     @default(5)
+  bankName         String?
+  accountNumber    String?
+  ifscCode         String?
+  accountHolder    String?
+  kycDocumentUrl   String?
+  kycDocumentType  String?   // AADHAAR, PAN, KISAN_CREDIT_CARD
+  kycStatus        String    @default("SUBMITTED") // SUBMITTED, UNDER_REVIEW, APPROVED, REJECTED
+  verifiedAt       DateTime?
+  notes            String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model DistributorProfile {
+  id                 String    @id @default(cuid())
+  userId             String    @unique
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  businessName       String
+  gstin              String?
+  panNumber          String?
+  operatingStates    String    // JSON string array of operating states
+  operatingDistricts String?   // JSON string array
+  warehouseAddress   String
+  warehouseCity      String
+  warehouseState     String
+  warehousePincode   String
+  coldStorageCapacityCrates Int @default(0)
+  minOrderValueInr   Float     @default(2000)
+  defaultMarginPct   Float     @default(12.0)
+  creditApproved     Boolean   @default(false)
+  creditLimitInr     Float     @default(0)
+  outstandingCreditInr Float   @default(0)
+  paymentTermsDays   Int       @default(14)
+  kycStatus          String    @default("SUBMITTED")
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model RetailerProfile {
+  id                 String    @id @default(cuid())
+  userId             String    @unique
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shopName           String
+  businessType       String    @default("FLOWER_SHOP") // FLOWER_SHOP, FLORIST, TEMPLE_TRUST, WEDDING_PLANNER, HOTEL
+  gstin              String?
+  deliveryAddress    String
+  city               String
+  state              String
+  pincode            String
+  dailyRequirementKg Float     @default(0)
+  creditApproved     Boolean   @default(false)
+  creditLimitInr     Float     @default(0)
+  outstandingCreditInr Float   @default(0)
+  paymentTermsDays   Int       @default(7)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model DeliveryProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vehicleType     String   // REFRIGERATED_VAN, THREE_WHEELER, TWO_WHEELER, TRUCK
+  vehicleNumber   String
+  drivingLicenseNo String?
+  assignedHubCity String
+  isAvailable     Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ── 2. CATALOGUE & PRODUCT ENGINE ──
+model Category {
+  id           String    @id @default(cuid())
+  name         String
+  nameHi       String
+  slug         String    @unique
+  description  String?
+  emoji        String    @default("🌸")
+  imageUrl     String?
+  displayOrder Int       @default(0)
+  isActive     Boolean   @default(true)
+  products     Product[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Product {
+  id                     String    @id @default(cuid())
+  name                   String
+  nameHi                 String
+  slug                   String    @unique
+  sku                    String    @unique
+  categoryId             String
+  category               Category  @relation(fields: [categoryId], references: [id])
+  variety                String
+  color                  String
+  grade                  String    @default("A") // Premium Grade A, Grade B, Commercial
+  unit                   String    @default("kg") // kg, bunch, stem, piece, garland, crate
+  description            String
+  ritualSignificance     String?
+  careInstructions       String?
+  originLocation         String    // e.g., "Hosur, Tamil Nadu", "Nashik, Maharashtra"
+  imageUrl               String
+  images                 String?   // JSON array of image URLs
+  
+  // Standard Price Baselines (INR)
+  farmerBasePrice        Float     // Expected farmer procurement price
+  wholesalePrice         Float     // Primary wholesale price
+  distributorPrice       Float     // Price for distributor bulk
+  retailPrice            Float     // Price for individual customer
+  bulkPricePerKg         Float?    // Volume tier incentive
+  minOrderQty            Float     @default(1)
+  maxOrderQty            Float     @default(1000)
+  
+  // Shelf Life & Freshness Indicators
+  expectedShelfLifeDays  Int       @default(3)
+  sameDayHarvestEligible Boolean   @default(true)
+  isSeasonal             Boolean   @default(false)
+  seasonsActive          String?   // e.g. "All Year", "Oct - Feb"
+  festivalTags           String?   // JSON array of festival tags
+  occasions              String?   // JSON array of occasions
+  
+  isActive               Boolean   @default(true)
+  isFeatured             Boolean   @default(false)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  supplierOfferings      SupplierProduct[]
+  inventoryItems         Inventory[]
+  orderItems             OrderItem[]
+  purchaseOrderItems     PurchaseOrderItem[]
+  cartItems              CartItem[]
+  reviews                Review[]
+
+  @@index([categoryId, isActive])
+  @@index([slug])
+  @@index([variety])
+}
+
+model SupplierProduct {
+  id              String   @id @default(cuid())
+  supplierId      String
+  supplier        User     @relation(fields: [supplierId], references: [id], onDelete: Cascade)
+  productId       String
+  product         Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  availableQty    Float    @default(0)
+  pricePerUnit    Float
+  unit            String   @default("kg")
+  harvestDate     DateTime?
+  dispatchDate    DateTime?
+  qualityGrade    String   @default("A")
+  status          String   @default("ACTIVE") // ACTIVE, OUT_OF_STOCK, PENDING_INSPECTION
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  orderItems      OrderItem[]
+
+  @@index([supplierId, productId])
+}
+
+// ── 3. INVENTORY & BATCH FRESHNESS ENGINE ──
+model Warehouse {
+  id          String      @id @default(cuid())
+  name        String
+  code        String      @unique
+  address     String
+  city        String
+  state       String
+  pincode     String
+  managerName String?
+  phone       String?
+  isColdStorage Boolean   @default(true)
+  isActive    Boolean     @default(true)
+  inventories Inventory[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Inventory {
+  id               String       @id @default(cuid())
+  productId        String
+  product          Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  warehouseId      String?
+  warehouse        Warehouse?   @relation(fields: [warehouseId], references: [id], onDelete: SetNull)
+  quantityOnHand   Float        @default(0)
+  quantityReserved Float        @default(0)
+  quantityAvailable Float       @default(0)
+  reorderLevel     Float        @default(20)
+  lastUpdated      DateTime     @default(now())
+
+  batches          InventoryBatch[]
+  movements        InventoryMovement[]
+
+  @@unique([productId, warehouseId])
+}
+
+model InventoryBatch {
+  id            String    @id @default(cuid())
+  inventoryId   String
+  inventory     Inventory @relation(fields: [inventoryId], references: [id], onDelete: Cascade)
+  batchNumber   String    @unique
+  harvestDate   DateTime
+  arrivalDate   DateTime  @default(now())
+  expiryDate    DateTime
+  initialQty    Float
+  currentQty    Float
+  costPerUnit   Float
+  grade         String    @default("A")
+  status        String    @default("FRESH") // FRESH, AGING, SPOILED, DEPLETED
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  movements     InventoryMovement[]
+}
+
+model InventoryMovement {
+  id          String          @id @default(cuid())
+  inventoryId String
+  inventory   Inventory       @relation(fields: [inventoryId], references: [id], onDelete: Cascade)
+  batchId     String?
+  batch       InventoryBatch? @relation(fields: [batchId], references: [id], onDelete: SetNull)
+  type        String          // INBOUND, OUTBOUND, RESERVATION, RELEASE, SPOILAGE, MANUAL_ADJUSTMENT
+  quantity    Float
+  reason      String
+  referenceId String?         // Order ID, PO ID, or inspection ticket
+  createdAt   DateTime        @default(now())
+}
+
+// ── 4. LOCATION & SERVICEABILITY ENGINE ──
+model ServiceZone {
+  id            String   @id @default(cuid())
+  state         String
+  district      String
+  pincodePrefix String   // First 3 digits or exact 6 digits
+  serviceType   String   // SAME_DAY, NEXT_DAY, STANDARD_2_DAY
+  isServiceable Boolean  @default(true)
+  deliveryFee   Float    @default(0)
+  freeDeliveryThreshold Float @default(1000)
+  cutoffHour    Int      @default(18) // 6 PM cutoff for next morning delivery
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([pincodePrefix])
+  @@index([state, district])
+}
+
+// ── 5. CARTS & ACTIVE SESSIONS ──
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String?
+  user      User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionId String?    @unique
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Float
+  unitPrice Float
+  unit      String   @default("kg")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ── 6. ORDERS, LIFECYCLE & FULFILLMENT ──
+model Order {
+  id                  String      @id @default(cuid())
+  orderNumber         String      @unique // e.g., FO-2026-0001
+  buyerId             String
+  buyer               User        @relation("BuyerOrders", fields: [buyerId], references: [id])
+  orderType           String      @default("B2B_WHOLESALE") // B2B_WHOLESALE, B2C_RETAIL, TEMPLE_DAILY, WEDDING_BULK
+  
+  subtotal            Float
+  discountAmount      Float       @default(0)
+  deliveryCharge      Float       @default(0)
+  taxAmount           Float       @default(0)
+  totalAmount         Float
+  
+  paymentMethod       String      @default("RAZORPAY") // RAZORPAY, COD, NEFT_RTGS, B2B_CREDIT
+  paymentStatus       String      @default("PENDING") // PENDING, PAID, FAILED, REFUNDED, CREDIT_APPROVED
+  fulfillmentStatus   String      @default("PENDING") // PENDING, CONFIRMED, PROCESSING, DISPATCHED, IN_TRANSIT, DELIVERED, CANCELLED
+  
+  deliveryAddress     String
+  deliveryCity        String
+  deliveryState       String
+  deliveryPincode     String
+  recipientName       String
+  recipientPhone      String
+  deliverySlot        String?     // e.g., "Early Morning Puja (5 AM - 7 AM)"
+  deliveryDate        DateTime?
+  deliveryInstructions String?
+  orderNotes          String?
+  
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  items               OrderItem[]
+  payments            Payment[]
+  invoices            Invoice[]
+  shipments           Shipment[]
+
+  @@index([orderNumber])
+  @@index([buyerId])
+  @@index([paymentStatus, fulfillmentStatus])
+}
+
+model OrderItem {
+  id                String           @id @default(cuid())
+  orderId           String
+  order             Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId         String
+  product           Product          @relation(fields: [productId], references: [id])
+  supplierProductId String?
+  supplierProduct   SupplierProduct? @relation(fields: [supplierProductId], references: [id], onDelete: SetNull)
+  
+  quantity          Float
+  unit              String           @default("kg")
+  unitPrice         Float
+  taxRatePct        Float            @default(0)
+  totalPrice        Float
+  status            String           @default("CONFIRMED") // CONFIRMED, DISPATCHED, DELIVERED, CANCELLED
+  createdAt         DateTime         @default(now())
+
+  @@index([orderId])
+}
+
+// ── 7. B2B PURCHASE ORDERS (Distributor to Farmer) ──
+model PurchaseOrder {
+  id                  String              @id @default(cuid())
+  poNumber            String              @unique // PO-2026-0001
+  distributorId       String
+  distributor         User                @relation("DistributorPurchaseOrders", fields: [distributorId], references: [id])
+  supplierId          String
+  supplier            User                @relation("SupplierPurchaseOrders", fields: [supplierId], references: [id])
+  
+  totalAmount         Float
+  status              String              @default("SUBMITTED") // DRAFT, SUBMITTED, CONFIRMED, RECEIVED, REJECTED, CANCELLED
+  expectedArrivalDate DateTime?
+  deliveryLocation    String
+  notes               String?
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+
+  items               PurchaseOrderItem[]
+
+  @@index([poNumber])
+  @@index([distributorId])
+  @@index([supplierId])
+}
+
+model PurchaseOrderItem {
+  id              String        @id @default(cuid())
+  purchaseOrderId String
+  purchaseOrder   PurchaseOrder @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
+  productId       String
+  product         Product       @relation(fields: [productId], references: [id])
+  quantity        Float
+  unit            String        @default("kg")
+  unitPrice       Float
+  totalPrice      Float
+  receivedQty     Float         @default(0)
+  createdAt       DateTime      @default(now())
+}
+
+// ── 8. PAYMENTS & RAZORPAY VERIFICATION ──
+model Payment {
+  id                 String    @id @default(cuid())
+  paymentNumber      String    @unique // PAY-2026-0001
+  orderId            String
+  order              Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  gateway            String    @default("RAZORPAY")
+  gatewayOrderId     String?
+  gatewayPaymentId   String?
+  gatewaySignature   String?
+  amount             Float
+  currency           String    @default("INR")
+  status             String    @default("PENDING") // PENDING, CAPTURED, FAILED, REFUNDED
+  rawWebhookResponse String?   // Full response for audit
+  verifiedAt         DateTime?
+  failureReason      String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@index([gatewayOrderId])
+  @@index([gatewayPaymentId])
+}
+
+// ── 9. GST INVOICING & COMPLIANCE ──
+model Invoice {
+  id               String       @id @default(cuid())
+  invoiceNumber    String       @unique // INV-2026-0001
+  orderId          String
+  order            Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  sellerGstin      String?
+  buyerGstin       String?
+  sellerDetails    String       // JSON string of legal name, address
+  buyerDetails     String       // JSON string of recipient name, address
+  
+  taxableValue     Float
+  cgstAmount       Float        @default(0)
+  sgstAmount       Float        @default(0)
+  igstAmount       Float        @default(0)
+  totalTax         Float        @default(0)
+  deliveryCharge   Float        @default(0)
+  totalInvoiceInr  Float
+  
+  hsnCode          String       @default("0603") // Harmonized System Nomenclature for cut flowers
+  pdfUrl           String?
+  isCancelled      Boolean      @default(false)
+  createdAt        DateTime     @default(now())
+
+  creditNotes      CreditNote[]
+
+  @@index([invoiceNumber])
+  @@index([orderId])
+}
+
+model CreditNote {
+  id               String   @id @default(cuid())
+  creditNoteNumber String   @unique // CN-2026-0001
+  invoiceId        String
+  invoice          Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  amount           Float
+  reason           String
+  createdAt        DateTime @default(now())
+}
+
+// ── 10. SETTLEMENTS & B2B FINANCIAL LEDGERS ──
+model Settlement {
+  id               String    @id @default(cuid())
+  settlementNumber String    @unique // SET-2026-0001
+  userId           String
+  user             User      @relation(fields: [userId], references: [id])
+  amount           Float
+  status           String    @default("PENDING") // PENDING, PROCESSED, FAILED
+  utrNumber        String?   // Bank Unique Transaction Reference
+  payoutDate       DateTime?
+  notes            String?
+  createdAt        DateTime  @default(now())
+}
+
+model Ledger {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  type         String   // CREDIT (Earnings), DEBIT (Payout / Purchase)
+  amount       Float
+  balanceAfter Float
+  description  String
+  referenceId  String?  // Order ID, PO ID, or Settlement ID
+  createdAt    DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ── 11. LOGISTICS & CONSIGNMENT TRACKING ──
+model Shipment {
+  id                   String          @id @default(cuid())
+  trackingNumber       String          @unique // TRK-2026-0001
+  orderId              String
+  order                Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  assignedStaffId      String?
+  assignedStaff        User?           @relation("AssignedDeliveryStaff", fields: [assignedStaffId], references: [id], onDelete: SetNull)
+  
+  transportType        String          @default("LOCAL_FLEET") // LOCAL_FLEET, REGIONAL_LOGISTICS, INTERSTATE_EXPRESS
+  transportCompany     String?
+  vehicleNumber        String?
+  driverName           String?
+  driverPhone          String?
+  lrNumber             String?         // Lorry Receipt Number
+  
+  status               String          @default("READY_FOR_PICKUP") // READY_FOR_PICKUP, PICKED_UP, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED, FAILED
+  temperatureCelsius   Float?          // Perishable monitoring
+  proofOfDeliveryUrl   String?
+  failureReason        String?
+  dispatchedAt         DateTime?
+  estimatedArrivalAt   DateTime?
+  deliveredAt          DateTime?
+  createdAt            DateTime        @default(now())
+  updatedAt            DateTime        @updatedAt
+
+  events               ShipmentEvent[]
+
+  @@index([trackingNumber])
+  @@index([orderId])
+  @@index([status])
+}
+
+model ShipmentEvent {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  status      String
+  location    String?
+  note        String?
+  timestamp   DateTime @default(now())
+}
+
+// ── 12. B2B ENQUIRIES, RFQS & SUPPORT ──
+model Enquiry {
+  id           String   @id @default(cuid())
+  type         String   // BULK_RFQ, FARMER_PARTNER, DISTRIBUTOR_PARTNER, SUPPORT
+  name         String
+  businessName String?
+  phone        String
+  email        String?
+  state        String?
+  city         String?
+  flowerTypes  String?
+  quantityKg   Float?
+  targetDate   DateTime?
+  message      String
+  status       String   @default("NEW") // NEW, IN_REVIEW, QUOTED, CLOSED
+  assignedTo   String?
+  quoteAmount  Float?
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([type, status])
+}
+
+// ── 13. REVIEWS & QUALITY AUDIT ──
+model Review {
+  id               String   @id @default(cuid())
+  productId        String
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating           Int      @default(5)
+  comment          String
+  verifiedPurchase Boolean  @default(true)
+  isApproved       Boolean  @default(true)
+  createdAt        DateTime @default(now())
+
+  @@unique([productId, userId])
+}
+
+// ── 14. AUDIT LOGS & SYSTEM SETTINGS ──
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String   // USER_APPROVED, PRICE_OVERRIDE, ORDER_CANCELLED, REFUND_ISSUED, STOCK_ADJUSTED
+  entity    String   // Order, User, Product, Inventory
+  entityId  String
+  details   String?  // JSON details of changes
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([action, entity])
+}
+
+model SystemSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}

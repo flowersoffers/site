@@ -144,23 +144,23 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <main className="min-h-screen bg-[#FFF9EF]">
         {/* Breadcrumb Header */}
         <div className="bg-white border-b border-[#E9E4D8] py-3 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#26382B]/60 flex-wrap font-semibold">
-            <Link href="/" className="hover:text-[#701A40] transition-colors">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#68756A] flex-wrap font-semibold">
+            <Link href="/" className="hover:text-[#104B26] transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/flowers" className="hover:text-[#701A40] transition-colors">
+            <Link href="/flowers" className="hover:text-[#104B26] transition-colors">
               Flowers
             </Link>
             <span>/</span>
             <Link
               href={`/flowers/${product.category}`}
-              className="hover:text-[#701A40] capitalize transition-colors"
+              className="hover:text-[#104B26] capitalize transition-colors"
             >
               {product.category}
             </Link>
             <span>/</span>
-            <span className="text-[#701A40] font-bold">{product.nameEn}</span>
+            <span className="text-[#104B26] font-bold">{product.nameEn}</span>
           </div>
         </div>
 

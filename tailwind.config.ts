@@ -9,52 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors — auspicious Indian palette
+        forest: {
+          DEFAULT: "#104B26", // Primary
+          hover: "#0B351B",
+          light: "#E8F4EC",
+        },
+        "floral-pink": {
+          DEFAULT: "#E91E63", // Secondary
+          hover: "#C2185B",
+          light: "#FCE4EC",
+        },
+        marigold: {
+          DEFAULT: "#F36B21", // Accent
+          hover: "#D85812",
+          light: "#FFF3EB",
+        },
+        "leaf-green": {
+          DEFAULT: "#78B82A", // Supporting
+          hover: "#639A22",
+          light: "#F1F8E9",
+        },
+        "pale-ivory": "#FFF9EF",
+        "muted-gray": "#68756A",
+
+        // Aliases
         saffron: {
-          50:  "#fff8f0",
-          100: "#fff0dc",
-          200: "#ffddb5",
-          300: "#ffc480",
-          400: "#ffa04a",
-          500: "#FF6B35", // Primary Brand Color
-          600: "#e8541e",
-          700: "#c43e12",
-          800: "#9e3215",
-          900: "#7f2c16",
-          950: "#451209",
+          500: "#F36B21",
         },
         leaf: {
-          50:  "#f0fdf4",
-          100: "#dcfce7",
-          200: "#bbf7d0",
-          300: "#86efac",
-          400: "#4ade80",
-          500: "#2D7D46", // Secondary Brand Color
-          600: "#16a34a",
-          700: "#15803d",
-          800: "#166534",
-          900: "#14532d",
-          950: "#052e16",
+          500: "#78B82A",
         },
         gold: {
-          50:  "#fffef0",
-          100: "#fffcd1",
-          200: "#fff7a3",
-          300: "#ffee6a",
-          400: "#FFD700", // Accent — festive gold
-          500: "#e6b800",
-          600: "#b38a00",
-          700: "#8a6800",
-          800: "#6b5100",
-          900: "#523e00",
-        },
-        petal: {
-          50:  "#fdf4ff",
-          100: "#fae8ff",
-          200: "#f5d0fe",
-          300: "#f0abfc",
-          400: "#e879f9",
-          500: "#d946ef",
+          500: "#F36B21",
         },
       },
       fontFamily: {

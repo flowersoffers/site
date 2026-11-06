@@ -43,7 +43,7 @@ export default function FarmerStory() {
       aria-label="Our Farmer & Grower Network"
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        {/* Section Header (Master Brief Section 8) */}
+        {/* Section Header */}
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
           <span className="section-badge">
             🌾 Sustainable Agri-Commerce
@@ -56,7 +56,7 @@ export default function FarmerStory() {
             style={{
               fontSize: "1.1rem",
               fontWeight: 700,
-              color: "#701A40",
+              color: "#104B26",
               marginBottom: "8px",
             }}
           >
@@ -95,7 +95,7 @@ export default function FarmerStory() {
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.transform = "translateY(-4px)";
-                el.style.borderColor = "#701A40";
+                el.style.borderColor = "#104B26";
                 el.style.boxShadow = "0 12px 28px rgba(38, 56, 43, 0.1)";
               }}
               onMouseLeave={(e) => {
@@ -145,7 +145,7 @@ export default function FarmerStory() {
                   {item.title}
                 </h3>
 
-                <div style={{ fontSize: "12px", fontWeight: 700, color: "#701A40", marginBottom: "12px" }}>
+                <div style={{ fontSize: "12px", fontWeight: 700, color: "#E91E63", marginBottom: "12px" }}>
                   🌸 Varieties: {item.flowers}
                 </div>
 
@@ -163,7 +163,7 @@ export default function FarmerStory() {
                     fontSize: "11px",
                   }}
                 >
-                  <span style={{ fontWeight: 700, color: "#701A40" }}>
+                  <span style={{ fontWeight: 700, color: "#F36B21" }}>
                     🎯 Focus: {item.focus}
                   </span>
                 </div>
@@ -174,7 +174,19 @@ export default function FarmerStory() {
 
         {/* Bottom CTA */}
         <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <Link href="/farmers" className="btn-primary" style={{ padding: "14px 36px", color: "#FFFFFF" }}>
+          <Link
+            href="/farmers"
+            className="btn-primary"
+            style={{
+              padding: "14px 36px",
+              backgroundColor: "#104B26",
+              color: "#FFFFFF",
+              borderRadius: "9999px",
+              fontWeight: 700,
+              display: "inline-block",
+              textDecoration: "none",
+            }}
+          >
             Learn More About Our Farmer Network ➔
           </Link>
         </div>

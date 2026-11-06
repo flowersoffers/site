@@ -24,32 +24,39 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      <main className="bg-[#FFF8F2] min-h-screen py-12 sm:py-16">
+      <main className="bg-[#FFF9EF] min-h-screen py-12 sm:py-16">
         <div className="max-w-[1240px] mx-auto px-5 sm:px-8">
 
-          {/* ── Section Header (Screen 9) ── */}
+          {/* ── Section Header ── */}
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="px-3.5 py-1 rounded-full bg-[#FDF2F6] border border-[#F0E2DA] text-[#701A40] text-xs font-bold tracking-wider uppercase inline-block mb-3">
+            <span
+              className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase inline-block mb-3"
+              style={{
+                backgroundColor: "#EAF4EE",
+                color: "#104B26",
+                border: "1px solid rgba(16, 75, 38, 0.2)",
+              }}
+            >
               Customer Concierge
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#2D1B22] mb-2">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1A2E20] mb-2">
               Get in Touch
             </h1>
-            <p className="font-serif text-lg text-[#701A40]">
+            <p className="font-serif text-lg text-[#104B26]">
               We&apos;re here to make your floral moments special.
             </p>
           </div>
 
-          {/* ── Main Two-Column Layout (Screen 9) ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white rounded-3xl p-8 sm:p-12 border border-[#F0E2DA] shadow-xl">
+          {/* ── Main Two-Column Layout ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white rounded-3xl p-8 sm:p-12 border border-[#E9E4D8] shadow-xl">
 
-            {/* Left: Contact Info (Screen 9) */}
+            {/* Left: Contact Info */}
             <div className="lg:col-span-5 space-y-6">
               <div>
-                <h2 className="font-display text-2xl font-bold text-[#2D1B22] mb-2">
+                <h2 className="font-display text-2xl font-bold text-[#1A2E20] mb-2">
                   Contact Information
                 </h2>
-                <p className="text-xs sm:text-sm text-[#7A646C] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#68756A] leading-relaxed">
                   Have questions about custom bouquets, wedding orders, or same-day delivery slots?
                   Reach out to our dedicated floral concierge team.
                 </p>
@@ -58,71 +65,71 @@ export default function ContactPage() {
               <div className="space-y-5 pt-2">
                 {/* Call Us */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#FDF2F6] text-[#701A40] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#EAF4EE] text-[#104B26] flex items-center justify-center font-bold text-lg flex-shrink-0">
                     📞
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C]">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A]">
                       Call Us
                     </h3>
                     <a
                       href="tel:+919876543210"
-                      className="text-base font-bold text-[#2D1B22] hover:text-[#701A40] transition-colors"
+                      className="text-base font-bold text-[#1A2E20] hover:text-[#104B26] transition-colors"
                     >
                       +91 98765 43210
                     </a>
-                    <p className="text-[11px] text-[#7A646C]">Direct florist helpline</p>
+                    <p className="text-[11px] text-[#68756A]">Direct florist helpline</p>
                   </div>
                 </div>
 
                 {/* Email Us */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#FFF7ED] text-[#E69A28] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#FFF9EF] text-[#F36B21] border border-[#E9E4D8] flex items-center justify-center font-bold text-lg flex-shrink-0">
                     ✉️
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C]">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A]">
                       Email Us
                     </h3>
                     <a
                       href="mailto:care@flowersoffers.com"
-                      className="text-base font-bold text-[#2D1B22] hover:text-[#701A40] transition-colors"
+                      className="text-base font-bold text-[#1A2E20] hover:text-[#104B26] transition-colors"
                     >
                       care@flowersoffers.com
                     </a>
-                    <p className="text-[11px] text-[#7A646C]">Reply within 2 business hours</p>
+                    <p className="text-[11px] text-[#68756A]">Reply within 2 business hours</p>
                   </div>
                 </div>
 
                 {/* Visit Us */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#FDF2F6] text-[#701A40] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#EAF4EE] text-[#104B26] flex items-center justify-center font-bold text-lg flex-shrink-0">
                     📍
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C]">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A]">
                       Visit Us
                     </h3>
-                    <p className="text-base font-bold text-[#2D1B22]">
+                    <p className="text-base font-bold text-[#1A2E20]">
                       Bengaluru, Karnataka, India
                     </p>
-                    <p className="text-[11px] text-[#7A646C]">Fulfillment centers across 28 states</p>
+                    <p className="text-[11px] text-[#68756A]">Fulfillment centers across 28 states</p>
                   </div>
                 </div>
 
                 {/* Business Hours */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-10 h-10 rounded-full bg-[#FFF7ED] text-[#E69A28] flex items-center justify-center font-bold text-lg flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#FFF9EF] text-[#F36B21] border border-[#E9E4D8] flex items-center justify-center font-bold text-lg flex-shrink-0">
                     ⏰
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#7A646C]">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#68756A]">
                       Business Hours
                     </h3>
-                    <p className="text-base font-bold text-[#2D1B22]">
+                    <p className="text-base font-bold text-[#1A2E20]">
                       Mon – Sun: 9:00 AM – 10:00 PM
                     </p>
-                    <p className="text-[11px] text-[#7A646C]">Morning harvest dispatches start at 6 AM</p>
+                    <p className="text-[11px] text-[#68756A]">Morning harvest dispatches start at 6 AM</p>
                   </div>
                 </div>
               </div>
@@ -133,23 +140,24 @@ export default function ContactPage() {
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#25D366]/10 text-[#075E54] border border-[#25D366]/30 font-bold text-xs hover:bg-[#25D366]/20 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#25D366] text-white font-bold text-xs hover:bg-[#1EBE5D] transition-all shadow-sm"
+                  style={{ color: "#FFFFFF", backgroundColor: "#25D366" }}
                 >
                   <span>💬</span>
-                  <span>Instant Chat on WhatsApp Concierge</span>
+                  <span style={{ color: "#FFFFFF" }}>Instant Chat on WhatsApp Concierge</span>
                 </a>
               </div>
             </div>
 
-            {/* Right: Contact Form (Screen 9) */}
-            <div className="lg:col-span-7 bg-[#FFF8F2] p-6 sm:p-8 rounded-3xl border border-[#F0E2DA]">
+            {/* Right: Contact Form */}
+            <div className="lg:col-span-7 bg-[#FFF9EF] p-6 sm:p-8 rounded-3xl border border-[#E9E4D8]">
               {submitted ? (
                 <div className="text-center py-12">
                   <span className="text-5xl block mb-3">🌸</span>
-                  <h3 className="font-display text-2xl font-bold text-[#701A40] mb-2">
+                  <h3 className="font-display text-2xl font-bold text-[#104B26] mb-2">
                     Message Sent Successfully!
                   </h3>
-                  <p className="text-sm text-[#7A646C] max-w-md mx-auto mb-6 font-serif">
+                  <p className="text-sm text-[#68756A] max-w-md mx-auto mb-6 font-serif">
                     Thank you for reaching out to FlowersOffers®. Our floral concierge team has received your note and will contact you promptly.
                   </p>
                   <button
@@ -158,8 +166,8 @@ export default function ContactPage() {
                       setSubmitted(false);
                       setFormData({ name: "", email: "", phone: "", message: "" });
                     }}
-                    className="btn-primary px-7 py-3 rounded-full text-xs font-bold"
-                    style={{ backgroundColor: "#701A40", color: "#FFFFFF" }}
+                    className="btn-primary px-7 py-3 rounded-full text-xs font-bold cursor-pointer"
+                    style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
                   >
                     Send Another Message →
                   </button>
@@ -167,7 +175,7 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#2D1B22]/80 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#1A2E20]/80 mb-1.5">
                       Your Name
                     </label>
                     <input
@@ -176,12 +184,12 @@ export default function ContactPage() {
                       placeholder="Enter your full name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-white border border-[#F0E2DA] rounded-xl px-4 py-3 text-sm text-[#2D1B22] outline-none focus:border-[#701A40]"
+                      className="w-full bg-white border border-[#E9E4D8] rounded-xl px-4 py-3 text-sm text-[#1A2E20] outline-none focus:border-[#104B26]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#2D1B22]/80 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#1A2E20]/80 mb-1.5">
                       Email Address
                     </label>
                     <input
@@ -190,12 +198,12 @@ export default function ContactPage() {
                       placeholder="your.email@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-white border border-[#F0E2DA] rounded-xl px-4 py-3 text-sm text-[#2D1B22] outline-none focus:border-[#701A40]"
+                      className="w-full bg-white border border-[#E9E4D8] rounded-xl px-4 py-3 text-sm text-[#1A2E20] outline-none focus:border-[#104B26]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#2D1B22]/80 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#1A2E20]/80 mb-1.5">
                       Phone Number
                     </label>
                     <input
@@ -204,12 +212,12 @@ export default function ContactPage() {
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-white border border-[#F0E2DA] rounded-xl px-4 py-3 text-sm text-[#2D1B22] outline-none focus:border-[#701A40]"
+                      className="w-full bg-white border border-[#E9E4D8] rounded-xl px-4 py-3 text-sm text-[#1A2E20] outline-none focus:border-[#104B26]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#2D1B22]/80 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-[#1A2E20]/80 mb-1.5">
                       Your Message
                     </label>
                     <textarea
@@ -218,17 +226,17 @@ export default function ContactPage() {
                       placeholder="Tell us about your flower requirements, occasion date, or custom requests..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-white border border-[#F0E2DA] rounded-xl p-4 text-sm text-[#2D1B22] outline-none focus:border-[#701A40] resize-none"
+                      className="w-full bg-white border border-[#E9E4D8] rounded-xl p-4 text-sm text-[#1A2E20] outline-none focus:border-[#104B26] resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     className="btn-primary w-full py-4 rounded-full font-bold text-sm shadow-md hover:shadow-xl transition-all cursor-pointer flex items-center justify-center gap-2"
-                    style={{ backgroundColor: "#701A40", color: "#FFFFFF" }}
+                    style={{ backgroundColor: "#104B26", color: "#FFFFFF" }}
                   >
-                    <span>Send Message</span>
-                    <span>→</span>
+                    <span style={{ color: "#FFFFFF" }}>Send Message</span>
+                    <span style={{ color: "#FFFFFF" }}>→</span>
                   </button>
                 </form>
               )}

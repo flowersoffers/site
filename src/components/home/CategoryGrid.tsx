@@ -62,7 +62,7 @@ export default function CategoryGrid({ categories }: CategoryGridProps) {
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
               el.style.transform = "translateY(-4px)";
-              el.style.borderColor = "#E69A28";
+              el.style.borderColor = "#F36B21";
               el.style.boxShadow = "0 10px 25px rgba(38, 56, 43, 0.12)";
             }}
             onMouseLeave={(e) => {

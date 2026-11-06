@@ -1,55 +1,61 @@
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════
-   FlowersOffers.com — AN EXPRESSION OF EMOTION
-   Master Template Kit Palette & Visual Direction:
-   - Royal Plum / Wine Burgundy: #701A40 / #5B1435 (Dominant Primary & CTAs)
-   - Warm Honey Gold / Amber:    #E69A28 / #F5A623 (Offers, Badges, Highlights)
-   - Champagne Peach / Cream:    #FFF8F2 / #FFF6EE (Canvas Background 60%)
-   - Pure White:                 #FFFFFF (Surfaces & Cards)
-   - Dark Espresso Mocha Text:   #2D1B22 (Primary Headings & Text)
-   - Mauve Taupe Muted Text:     #7A646C (Secondary Text)
-   - Soft Romantic Border:       #F0E2DA (Delicate Floral Dividers)
-   - Botanical Fresh Accent:     #2D8A4E (Nature & Agriculture Links)
+   FlowersOffers.com — OFFICIAL BRAND DESIGN SYSTEM
+   Premium Floral Marketplace Identity:
+   - Primary (25%):    Forest Green    #104B26 (Headers, navigation, primary buttons)
+   - Secondary (10%):  Floral Pink     #E91E63 (Highlights, promotions, romantic accents)
+   - Accent (5%):      Marigold Orange #F36B21 (Offers, festive badges, CTA buttons)
+   - Supporting (10%): Leaf Green      #78B82A (Nature, freshness, farm trust, icons)
+   - Background (50%): Pale Ivory      #FFF9EF & Pure White #FFFFFF
+   - Supporting Text:  Muted Green-Gray #68756A (Descriptions & secondary labels)
+   - Dominant Identity: Forest Green (#104B26), Pink & Orange used selectively.
+   - Button Rule: All buttons MUST have pure white text (#FFFFFF).
 ══════════════════════════════════════════════════════ */
 
 :root {
-  /* Template Kit Dominant Tokens */
-  --clr-plum:           #701A40;
-  --clr-plum-hover:     #5B1435;
-  --clr-plum-light:     #FDF2F6;
-  --clr-gold:           #E69A28;
-  --clr-gold-hover:     #CF851B;
-  --clr-gold-light:     #FFF7ED;
+  /* Official FlowersOffers Palette Tokens */
+  --clr-forest:         #104B26; /* Primary brand colour */
+  --clr-forest-hover:   #0B351B;
+  --clr-forest-light:   #E8F4EC;
 
-  /* Botanical & Category Accents */
-  --clr-forest:         #701A40; /* Aliased to plum for global consistency */
-  --clr-forest-hover:   #5B1435;
-  --clr-forest-light:   #FDF2F6;
-  --clr-leaf:           #2D8A4E;
-  --clr-leaf-light:     #EAF6EE;
-  --clr-pink:           #E11D48;
-  --clr-pink-light:     #FFF1F2;
-  --clr-orange:         #E69A28;
-  --clr-orange-light:   #FFF7ED;
+  --clr-pink:           #E91E63; /* Secondary colour */
+  --clr-pink-hover:     #C2185B;
+  --clr-pink-light:     #FCE4EC;
 
-  /* Neutrals & Surfaces */
-  --clr-ivory:          #FFF8F2;
-  --clr-champagne:      #FFF8F2;
+  --clr-orange:         #F36B21; /* Accent colour · Offers & Highlights */
+  --clr-orange-hover:   #D85812;
+  --clr-orange-light:   #FFF3EB;
+
+  --clr-leaf:           #78B82A; /* Supporting colour · Nature & Icons */
+  --clr-leaf-hover:     #639A22;
+  --clr-leaf-light:     #F1F8E9;
+
+  --clr-ivory:          #FFF9EF; /* Background · Clean, premium sections */
   --clr-white:          #FFFFFF;
-  --clr-text-main:      #2D1B22;
-  --clr-text-muted:     #7A646C;
-  --clr-border:         #F0E2DA;
-  --clr-border-subtle:  #F9F3EF;
+  --clr-text-main:      #1A2E20; /* Deep readable forest black */
+  --clr-text-muted:     #68756A; /* Muted Green-Gray */
+  --clr-border:         #E8E4D8;
+  --clr-border-subtle:  #F4F0E6;
 
-  /* Shadows */
-  --shadow-sm:        0 2px 8px rgba(112, 26, 64, 0.04);
-  --shadow-md:        0 8px 24px rgba(112, 26, 64, 0.08);
-  --shadow-lg:        0 18px 48px rgba(112, 26, 64, 0.12);
-  --shadow-plum:      0 10px 28px rgba(112, 26, 64, 0.22);
-  --shadow-forest:    0 10px 28px rgba(112, 26, 64, 0.22);
-  --shadow-gold:      0 8px 24px rgba(230, 154, 40, 0.24);
-  --shadow-orange:    0 8px 24px rgba(230, 154, 40, 0.24);
+  /* Legacy Compatibility Aliases */
+  --clr-plum:           #104B26; /* Replaced with Forest Green */
+  --clr-plum-hover:     #0B351B;
+  --clr-plum-light:     #E8F4EC;
+  --clr-gold:           #F36B21; /* Replaced with Marigold Orange */
+  --clr-gold-hover:     #D85812;
+  --clr-gold-light:     #FFF3EB;
+  --clr-champagne:      #FFF9EF;
+
+  /* Elevation Shadows */
+  --shadow-sm:        0 2px 8px rgba(16, 75, 38, 0.05);
+  --shadow-md:        0 8px 24px rgba(16, 75, 38, 0.09);
+  --shadow-lg:        0 18px 48px rgba(16, 75, 38, 0.13);
+  --shadow-forest:    0 10px 28px rgba(16, 75, 38, 0.22);
+  --shadow-orange:    0 8px 24px rgba(243, 107, 33, 0.26);
+  --shadow-pink:      0 8px 24px rgba(233, 30, 99, 0.24);
+  --shadow-plum:      var(--shadow-forest);
+  --shadow-gold:      var(--shadow-orange);
 
   /* Radius */
   --radius-sm:   10px;
@@ -89,6 +95,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -119,36 +126,63 @@ a {
   background: var(--clr-ivory);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--clr-border);
+  background: #DFE7E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-plum);
+  background: var(--clr-forest);
 }
 
 ::selection {
-  background: var(--clr-plum-light);
-  color: var(--clr-plum);
+  background: var(--clr-forest-light);
+  color: var(--clr-forest);
 }
 
 /* ── Focus Accessibility ── */
 :focus-visible {
-  outline: 3px solid var(--clr-plum);
+  outline: 3px solid var(--clr-forest);
   outline-offset: 3px;
   border-radius: 6px;
 }
 
 /* ════════════════════════════════════════════════════
-   BUTTON SYSTEM (Tactile, Responsive, Non-Overlapping)
+   CRITICAL BUTTON SYSTEM: ALL BUTTONS HAVE PURE WHITE TEXT
+   NO GREEN TEXT ON BUTTONS UNDER ANY CIRCUMSTANCES
 ════════════════════════════════════════════════════ */
+button,
+input[type="button"],
+input[type="submit"],
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-gold,
+.btn-orange,
+.btn-leaf,
+.btn-pink,
+.btn-glass,
+.btn-outline-white,
+a.btn,
+a.btn-primary,
+a.btn-secondary,
+a.btn-outline,
+a.btn-gold,
+a.btn-orange,
+a.btn-leaf,
+a.btn-pink,
+a.btn-glass,
+a.btn-outline-white {
+  color: #FFFFFF !important;
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-poppins), var(--font-inter), sans-serif;
-  font-weight: 600;
-  font-size: 0.9375rem;
+  font-weight: 700;
+  font-size: 0.875rem;
   line-height: 1.4;
   letter-spacing: 0.01em;
   border-radius: var(--radius-pill);
@@ -156,7 +190,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   user-select: none;
-  padding: 12px 24px;
+  padding: 11px 22px;
   min-height: 44px;
   max-width: 100%;
   text-align: center;
@@ -164,8 +198,7 @@ a {
     transform 180ms var(--ease-spring),
     box-shadow 180ms ease,
     background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease;
+    border-color 180ms ease;
   position: relative;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
@@ -191,8 +224,8 @@ a {
 }
 
 .btn-lg {
-  padding: 15px 32px;
-  font-size: 1rem;
+  padding: 14px 30px;
+  font-size: 0.9375rem;
   min-height: 50px;
 }
 
@@ -202,116 +235,87 @@ a {
   display: flex;
 }
 
-/* ════════════════════════════════════════════════════
-   CRITICAL BUTTON RULE: ALL BUTTONS HAVE PURE WHITE TEXT
-   NO GREEN TEXT ON BUTTONS UNDER ANY CIRCUMSTANCES
-════════════════════════════════════════════════════ */
-button,
-input[type="button"],
-input[type="submit"],
-.btn,
-.btn-primary,
-.btn-secondary,
-.btn-outline,
-.btn-gold,
-.btn-orange,
-.btn-leaf,
-.btn-glass,
-.btn-outline-white,
-a.btn,
-a.btn-primary,
-a.btn-secondary,
-a.btn-outline,
-a.btn-gold,
-a.btn-orange,
-a.btn-leaf,
-a.btn-glass,
-a.btn-outline-white {
-  color: #FFFFFF !important;
-}
-
-/* Dominant Primary: Royal Wine Plum */
+/* 1. Primary Button: Forest Green (#104B26) */
 .btn-primary {
-  background-color: var(--clr-plum) !important;
+  background-color: var(--clr-forest) !important;
   color: #FFFFFF !important;
   border: 1.5px solid transparent;
-  box-shadow: var(--shadow-plum);
+  box-shadow: var(--shadow-forest);
 }
 .btn-primary:hover {
-  background-color: var(--clr-plum-hover) !important;
+  background-color: var(--clr-forest-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(112, 26, 64, 0.35);
+  box-shadow: 0 12px 28px rgba(16, 75, 38, 0.35);
 }
 
-/* Secondary Button: Solid Royal Plum with Pure White Text */
+/* 2. Secondary Button: Leaf Green (#78B82A) */
 .btn-secondary,
-.btn-outline {
-  background-color: var(--clr-plum) !important;
+.btn-leaf {
+  background-color: var(--clr-leaf) !important;
   color: #FFFFFF !important;
-  border: 1.8px solid var(--clr-plum) !important;
-  box-shadow: var(--shadow-plum);
+  border: 1.5px solid transparent;
+  box-shadow: 0 6px 20px rgba(120, 184, 42, 0.28);
 }
 .btn-secondary:hover,
-.btn-outline:hover {
-  background-color: var(--clr-plum-hover) !important;
+.btn-leaf:hover {
+  background-color: var(--clr-leaf-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(120, 184, 42, 0.4);
 }
 
-/* Warm Honey Gold Button (Offers & Highlights) */
+/* 3. Accent / CTA Button: Marigold Orange (#F36B21) */
 .btn-orange,
 .btn-gold {
-  background-color: var(--clr-gold) !important;
+  background-color: var(--clr-orange) !important;
   color: #FFFFFF !important;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-orange);
   border: none;
 }
 .btn-orange:hover,
 .btn-gold:hover {
-  background-color: var(--clr-gold-hover) !important;
+  background-color: var(--clr-orange-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(230, 154, 40, 0.36);
+  box-shadow: 0 10px 24px rgba(243, 107, 33, 0.38);
 }
 
-/* Fresh Leaf Accent Button (Always White Text) */
-.btn-leaf {
-  background-color: var(--clr-leaf) !important;
+/* 4. Highlight Button: Floral Pink (#E91E63) */
+.btn-pink {
+  background-color: var(--clr-pink) !important;
   color: #FFFFFF !important;
-  font-weight: 700;
-  box-shadow: 0 6px 20px rgba(45, 138, 78, 0.25);
+  box-shadow: var(--shadow-pink);
   border: none;
 }
-.btn-leaf:hover {
-  background-color: #236E3E !important;
+.btn-pink:hover {
+  background-color: var(--clr-pink-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(45, 138, 78, 0.38);
 }
 
-/* Template Kit Helpers */
-.text-plum { color: var(--clr-plum) !important; }
-.bg-plum { background-color: var(--clr-plum) !important; }
-.border-plum { border-color: var(--clr-plum) !important; }
+/* 5. Outline Button: Forest Green Border with Solid Forest Background on Hover */
+.btn-outline {
+  background-color: var(--clr-forest) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid var(--clr-forest) !important;
+  box-shadow: var(--shadow-forest);
+}
+.btn-outline:hover {
+  background-color: var(--clr-forest-hover) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
 
-.text-gold { color: var(--clr-gold) !important; }
-.bg-gold { background-color: var(--clr-gold) !important; }
-.border-gold { border-color: var(--clr-gold) !important; }
-
-.bg-champagne { background-color: var(--clr-champagne) !important; }
-.border-soft { border-color: var(--clr-border) !important; }
-.shadow-romantic { box-shadow: 0 12px 32px rgba(112, 26, 64, 0.08) !important; }
-
-/* Botanical Glass Button (Solid Plum with White Text) */
+/* Botanical Glass Button */
 .btn-glass {
-  background-color: var(--clr-plum) !important;
+  background-color: var(--clr-forest) !important;
   color: #FFFFFF !important;
   border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   backdrop-filter: blur(12px);
 }
 .btn-glass:hover {
-  background-color: var(--clr-plum-hover) !important;
+  background-color: var(--clr-forest-hover) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -346,8 +350,7 @@ a.btn-outline-white {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--clr-text-main);
-  opacity: 0.85;
+  color: var(--clr-forest);
 }
 
 .form-input,
@@ -372,14 +375,14 @@ a.btn-outline-white {
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--clr-text-muted);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--clr-forest);
-  box-shadow: 0 0 0 3px rgba(16, 75, 38, 0.12);
+  box-shadow: 0 0 0 3px rgba(16, 75, 38, 0.14);
   background-color: #FFFFFF;
 }
 
@@ -401,8 +404,8 @@ a.btn-outline-white {
 }
 
 .phone-prefix-group:focus-within {
-  border-color: var(--clr-plum);
-  box-shadow: 0 0 0 3px rgba(112, 26, 64, 0.12);
+  border-color: var(--clr-forest);
+  box-shadow: 0 0 0 3px rgba(16, 75, 38, 0.14);
 }
 
 .phone-prefix-badge {
@@ -410,8 +413,8 @@ a.btn-outline-white {
   align-items: center;
   gap: 4px;
   padding: 0 12px;
-  background-color: var(--clr-plum-light);
-  color: var(--clr-plum);
+  background-color: var(--clr-forest-light);
+  color: var(--clr-forest);
   font-size: 0.8125rem;
   font-weight: 700;
   border-right: 1.5px solid var(--clr-border);
@@ -442,7 +445,7 @@ a.btn-outline-white {
   transition: transform 300ms var(--ease-smooth), box-shadow 300ms var(--ease-smooth), border-color 200ms ease;
 }
 .card-surface:hover {
-  border-color: var(--clr-leaf);
+  border-color: var(--clr-forest);
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
@@ -461,19 +464,19 @@ a.btn-outline-white {
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-.badge-forest  { background-color: var(--clr-plum-light); color: var(--clr-plum); border: 1px solid rgba(112,26,64,0.2); }
-.badge-leaf    { background-color: #FFF7ED;               color: var(--clr-gold); border: 1px solid rgba(230,154,40,0.3); }
-.badge-pink    { background-color: var(--clr-pink-light);   color: var(--clr-pink);  border: 1px solid rgba(233,30,99,0.25); }
-.badge-orange  { background-color: var(--clr-orange-light); color: var(--clr-orange);border: 1px solid rgba(243,107,33,0.3); }
+.badge-forest  { background-color: var(--clr-forest-light); color: var(--clr-forest); border: 1px solid rgba(16,75,38,0.2); }
+.badge-leaf    { background-color: var(--clr-leaf-light);   color: var(--clr-leaf);   border: 1px solid rgba(120,184,42,0.3); }
+.badge-pink    { background-color: var(--clr-pink-light);   color: var(--clr-pink);   border: 1px solid rgba(233,30,99,0.25); }
+.badge-orange  { background-color: var(--clr-orange-light); color: var(--clr-orange); border: 1px solid rgba(243,107,33,0.3); }
 
 /* Compatibility aliases - Always White Text on solid badge */
-.badge-bestseller { background-color: var(--clr-gold);   color: #FFFFFF !important; }
-.badge-new        { background-color: var(--clr-plum);   color: #FFFFFF !important; }
+.badge-bestseller { background-color: var(--clr-orange); color: #FFFFFF !important; }
+.badge-new        { background-color: var(--clr-forest); color: #FFFFFF !important; }
 .badge-seasonal   { background-color: var(--clr-pink);   color: #FFFFFF !important; }
-.badge-bulk       { background-color: var(--clr-plum-dark); color: #FFFFFF !important; }
+.badge-bulk       { background-color: var(--clr-forest); color: #FFFFFF !important; }
 
 /* ════════════════════════════════════════════════════
-   SECTION HEADINGS - White Text on Royal Plum Badge
+   SECTION HEADINGS - White Text on Forest Green Badge
 ════════════════════════════════════════════════════ */
 .section-badge {
   display: inline-flex;
@@ -485,9 +488,9 @@ a.btn-outline-white {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background-color: var(--clr-plum);
+  background-color: var(--clr-forest);
   color: #FFFFFF !important;
-  border: 1px solid rgba(112, 26, 64, 0.2);
+  border: 1px solid rgba(16, 75, 38, 0.2);
   margin-bottom: 12px;
 }
 
@@ -496,7 +499,7 @@ a.btn-outline-white {
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--clr-text-main);
+  color: var(--clr-forest);
   margin-bottom: 8px;
 }
 
@@ -538,129 +541,29 @@ a.btn-outline-white {
   width: 0;
   height: 2px;
   border-radius: 2px;
-  background-color: var(--clr-plum);
+  background-color: var(--clr-forest);
   transition: width 250ms var(--ease-smooth);
 }
 .nav-link-item:hover {
-  color: var(--clr-plum);
+  color: var(--clr-forest);
 }
 .nav-link-item:hover::after {
   width: 100%;
 }
 
-/* ════════════════════════════════════════════════════
-   MOTION GRAPHICS & FLORAL ANIMATIONS
-════════════════════════════════════════════════════ */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(2deg);
-  }
-}
+/* Helpers */
+.text-forest { color: var(--clr-forest) !important; }
+.bg-forest { background-color: var(--clr-forest) !important; }
+.border-forest { border-color: var(--clr-forest) !important; }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-18px) rotate(-3deg);
-  }
-}
+.text-pink { color: var(--clr-pink) !important; }
+.bg-pink { background-color: var(--clr-pink) !important; }
 
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(12px) rotate(-2deg);
-  }
-}
+.text-orange { color: var(--clr-orange) !important; }
+.bg-orange { background-color: var(--clr-orange) !important; }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.35;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.65;
-    transform: scale(1.1);
-  }
-}
+.text-leaf { color: var(--clr-leaf) !important; }
+.bg-leaf { background-color: var(--clr-leaf) !important; }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes petal-fall {
-  0% {
-    transform: translate3d(0, -10%, 0) rotate(0deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.85;
-  }
-  85% {
-    opacity: 0.75;
-  }
-  100% {
-    transform: translate3d(var(--petal-x, 80px), 115vh, 0) rotate(var(--petal-rot, 360deg));
-    opacity: 0;
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: float-slow 7s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 6s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 24s linear infinite;
-}
-
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-.btn-shimmer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  animation: shimmer 3s infinite;
-}
+.bg-ivory { background-color: var(--clr-ivory) !important; }
+.text-muted-gray { color: var(--clr-text-muted) !important; }

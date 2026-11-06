@@ -61,21 +61,21 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       <main className="bg-[#FFF9EF] min-h-screen">
         {/* Breadcrumb */}
         <div className="bg-white border-b border-[#E9E4D8] py-3 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#26382B]/60 font-semibold">
-            <Link href="/" className="hover:text-[#701A40] transition-colors">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs text-[#68756A] font-semibold">
+            <Link href="/" className="hover:text-[#104B26] transition-colors">
               Home
             </Link>
             <span>/</span>
-            <Link href="/flowers" className="hover:text-[#701A40] transition-colors">
+            <Link href="/flowers" className="hover:text-[#104B26] transition-colors">
               All Flowers
             </Link>
             <span>/</span>
-            <span className="text-[#701A40] font-bold">{category.name}</span>
+            <span className="text-[#104B26] font-bold">{category.name}</span>
           </div>
         </div>
 
         {/* Category Hero */}
-        <section className="relative overflow-hidden py-14 sm:py-16 px-4 text-white text-center bg-gradient-to-r from-[#5B1435] via-[#701A40] to-[#185E31]">
+        <section className="relative overflow-hidden py-14 sm:py-16 px-4 text-white text-center bg-gradient-to-r from-[#0B351B] via-[#104B26] to-[#0D3D1E]">
           <div className="max-w-3xl mx-auto relative z-10">
             <span className="text-5xl block mb-2">{category.emoji}</span>
             <h1 className="font-display text-3xl sm:text-5xl font-black mb-2 leading-tight">
@@ -98,7 +98,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
         {/* Related Categories Navigation */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-[#E9E4D8]">
-          <h2 className="font-display text-2xl font-black text-[#701A40] mb-6 text-center">
+          <h2 className="font-display text-2xl font-black text-[#104B26] mb-6 text-center">
             Explore Other Floral Offerings
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5">
@@ -106,13 +106,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <Link
                 key={c.id}
                 href={`/flowers/${c.slug}`}
-                className="group bg-white border border-[#E9E4D8] rounded-2xl p-4 text-center transition-all hover:-translate-y-1 hover:border-[#701A40] hover:shadow-md"
+                className="group bg-white border border-[#E9E4D8] rounded-2xl p-4 text-center transition-all hover:-translate-y-1 hover:border-[#F36B21] hover:shadow-md"
               >
                 <div className="text-3xl mb-1.5">{c.emoji}</div>
-                <div className="font-bold text-xs text-[#26382B] group-hover:text-[#701A40] transition-colors">
+                <div className="font-bold text-xs text-[#1A2E20] group-hover:text-[#104B26] transition-colors">
                   {c.name}
                 </div>
-                <div className="text-[11px] text-[#26382B]/60 font-hindi">
+                <div className="text-[11px] text-[#68756A] font-hindi">
                   {c.nameHi}
                 </div>
               </Link>
