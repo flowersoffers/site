@@ -14,6 +14,18 @@ const nextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "/marketplace.html",
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
 };
 
 module.exports = nextConfig;
