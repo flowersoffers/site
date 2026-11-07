@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:css": "node scripts/buildMarketplaceCss.js",
+    "build": "npm run build:css && next build",
     "start": "next start",
     "lint": "eslint",
+    "test:features": "node scripts/testAllFeatures.js",
     "db:seed": "tsx prisma/seed.ts"
   },
   "prisma": {

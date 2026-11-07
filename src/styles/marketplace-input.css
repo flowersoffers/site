@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@source "../../public/marketplace.html";
+@source "../../public/index.html";
+
+@theme {
+  --color-forest: #104B26;
+  --color-forest-dark: #0B351B;
+  --color-forest-light: #E8F4EC;
+  
+  --color-marigold: #F36B21;
+  --color-marigold-hover: #D85812;
+  --color-marigold-light: #FFF3EB;
+
+  --color-lotus: #E91E63;
+  --color-lotus-hover: #C2185B;
+  --color-lotus-light: #FCE4EC;
+
+  --color-leaf: #78B82A;
+  --color-leaf-hover: #639A22;
+  --color-leaf-light: #F1F8E9;
+
+  --color-ivory: #FFF9EF;
+  --color-ink: #1A2E20;
+  --color-muted: #68756A;
+  --color-sand: #E8E4D8;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-hindi: Hind, system-ui, sans-serif;
+}

@@ -107,10 +107,10 @@ async function runTests() {
   try {
     const robotsRes = await fetchUrl('/robots.txt');
     assert(robotsRes.status === 200, 'Robots.txt returns HTTP 200');
-    assert(robotsRes.body.includes('User-agent: *'), 'Robots.txt defines User-agent: *');
+    assert(/User-agent:\s*\*/i.test(robotsRes.body), 'Robots.txt defines User-agent: *');
     assert(robotsRes.body.includes('Allow: /'), 'Robots.txt permits crawling root /');
     assert(robotsRes.body.includes('Sitemap: https://flowersoffers.com/sitemap.xml'), 'Robots.txt points to official sitemap URL');
-    assert(robotsRes.body.includes('User-agent: Googlebot'), 'Robots.txt explicitly covers Googlebot');
+    assert(/User-agent:\s*Googlebot/i.test(robotsRes.body), 'Robots.txt explicitly covers Googlebot');
   } catch (err) {
     assert(false, 'Robots.txt validation error: ' + err.message);
   }
