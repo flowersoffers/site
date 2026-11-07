@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsversion='3' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='utf-8'/>
+  <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Hind:wght@500;600;700&amp;family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&amp;display=swap' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+  /* ══════════════════════════════════════════════════════
+     FlowersOffers.com — OFFICIAL BLOGGER / BLOGSPOT THEME
+     Brand Color Palette:
+     - Primary:    Forest Green    #104B26 (Header, Nav, Titles, Buttons)
+     - Secondary:  Floral Pink     #E91E63 (Accents, highlights, badges)
+     - Accent:     Marigold Orange #F36B21 (CTAs, festive badges, stars)
+     - Supporting: Leaf Green      #78B82A (Freshness badges, leaf tags)
+     - Background: Pale Ivory      #FFF9EF & Pure White #FFFFFF
+     - Text Dark:  Forest Charcoal #1A2E20
+     - Text Muted: Green-Gray      #68756A
+     - Border:     Sand Ivory      #E8E4D8
+     - Button Rule: All buttons MUST have pure white text (#FFFFFF).
+  ══════════════════════════════════════════════════════ */
+
+  :root {
+    --clr-forest: #104B26;
+    --clr-forest-dark: #0B351B;
+    --clr-forest-light: #E8F4EC;
+    --clr-pink: #E91E63;
+    --clr-pink-light: #FCE4EC;
+    --clr-orange: #F36B21;
+    --clr-orange-hover: #D85812;
+    --clr-orange-light: #FFF3EB;
+    --clr-leaf: #78B82A;
+    --clr-leaf-light: #F1F8E9;
+    --clr-ivory: #FFF9EF;
+    --clr-white: #FFFFFF;
+    --clr-text-main: #1A2E20;
+    --clr-text-muted: #68756A;
+    --clr-border: #E8E4D8;
+    --clr-border-light: #F4F0E6;
+
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-hindi: 'Hind', system-ui, sans-serif;
+
+    --shadow-sm: 0 2px 8px rgba(16, 75, 38, 0.05);
+    --shadow-md: 0 8px 24px rgba(16, 75, 38, 0.08);
+    --shadow-lg: 0 16px 40px rgba(16, 75, 38, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 9999px;
+  }
+
+  /* Reset & Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--clr-ivory);
+    color: var(--clr-text-main);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Button Rule: ALWAYS White Text */
+  button,
+  .btn,
+  .btn-primary,
+  .btn-orange,
+  .btn-read-more,
+  .btn-cta,
+  input[type="submit"],
+  a.btn {
+    color: #FFFFFF !important;
+    font-family: var(--font-sans);
+    font-weight: 700;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── 1. Top Announcement Bar ── */
+  .top-bar {
+    background-color: var(--clr-forest-dark);
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(243, 107, 33, 0.3);
+  }
+  .top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .top-bar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
+  .top-bar-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--clr-leaf);
+    display: inline-block;
+  }
+  .top-bar-link {
+    color: var(--clr-orange);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+  }
+  .top-bar-link:hover {
+    text-decoration: underline;
+    color: #FFA726;
+  }
+
+  /* ── 2. Site Header & Brand Logo ── */
+  .site-header {
+    background-color: var(--clr-white);
+    border-bottom: 1px solid var(--clr-border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .brand-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .brand-logo-img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+  }
+  .brand-text-fallback {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-title {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--clr-forest);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .brand-title span {
+    color: var(--clr-orange);
+  }
+  .brand-tagline {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-text-muted);
+    margin-top: 2px;
+  }
+
+  /* Search & Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-search {
+    position: relative;
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .header-search { display: block; }
+  }
+  .header-search input {
+    width: 260px;
+    padding: 9px 38px 9px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--clr-border);
+    background-color: var(--clr-ivory);
+    font-size: 13px;
+    color: var(--clr-text-main);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  .header-search input:focus {
+    border-color: var(--clr-forest);
+    background-color: var(--clr-white);
+    box-shadow: 0 0 0 3px rgba(16, 75, 38, 0.1);
+    width: 300px;
+  }
+  .header-search button {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px;
+    color: var(--clr-forest);
+  }
+  .btn-shop-market {
+    background-color: var(--clr-forest);
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(16, 75, 38, 0.2);
+  }
+  .btn-shop-market:hover {
+    background-color: var(--clr-forest-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 75, 38, 0.28);
+  }
+
+  /* ── 3. Navigation Bar ── */
+  .nav-bar {
+    background-color: var(--clr-forest);
+    color: #FFFFFF;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0;
+    scrollbar-width: none;
+  }
+  .nav-menu::-webkit-scrollbar { display: none; }
+  .nav-item a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+  }
+  .nav-item a:hover,
+  .nav-item.active a {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-bottom-color: var(--clr-orange);
+  }
+  .nav-item.special a {
+    color: var(--clr-orange);
+    font-weight: 700;
+  }
+
+  /* ── 4. Blog Hero Header Banner ── */
+  .blog-hero {
+    background: linear-gradient(135deg, #104B26 0%, #0B351B 100%);
+    color: #FFFFFF;
+    padding: 48px 0;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-bottom: 4px solid var(--clr-orange);
+  }
+  .blog-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 85% 20%, rgba(243, 107, 33, 0.18) 0%, transparent 50%),
+                      radial-gradient(circle at 10% 80%, rgba(120, 184, 42, 0.15) 0%, transparent 45%);
+    pointer-events: none;
+  }
+  .blog-hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--clr-orange);
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  @media (min-width: 768px) {
+    .hero-title { font-size: 46px; }
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: rgba(255, 249, 239, 0.85);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  /* ── 5. Main Layout: Content + Sidebar ── */
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 60px;
+  }
+  @media (min-width: 992px) {
+    .layout-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  /* ── 6. Posts Grid (Index / Category / Search) ── */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 640px) {
+    .posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .post-card {
+    background-color: var(--clr-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--clr-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: #D3E0D7;
+  }
+  .card-thumb {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: var(--clr-forest-light);
+  }
+  .card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .post-card:hover .card-thumb img {
+    transform: scale(1.05);
+  }
+  .card-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    background: linear-gradient(135deg, #E8F4EC 0%, #FFF3EB 100%);
+  }
+  .card-category-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--clr-forest);
+    color: #FFFFFF !important;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--clr-text-muted);
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--clr-text-main);
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+  .post-card:hover .card-title {
+    color: var(--clr-forest);
+  }
+  .card-snippet {
+    font-size: 13.5px;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex: 1;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--clr-border-light);
+    padding-top: 14px;
+  }
+  .card-author {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--clr-text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-read-more {
+    background-color: var(--clr-forest);
+    color: #FFFFFF !important;
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  .btn-read-more:hover {
+    background-color: var(--clr-orange);
+  }
+
+  /* ── 7. Single Post Page Styling ── */
+  .single-post-card {
+    background-color: var(--clr-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--clr-border);
+    padding: 32px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  @media (min-width: 768px) {
+    .single-post-card { padding: 44px 40px; }
+  }
+  .post-breadcrumb {
+    font-size: 12px;
+    color: var(--clr-text-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .post-breadcrumb a { color: var(--clr-forest); font-weight: 600; }
+  .post-breadcrumb a:hover { text-decoration: underline; }
+
+  .single-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--clr-forest);
+    margin-bottom: 16px;
+  }
+  @media (min-width: 768px) {
+    .single-title { font-size: 38px; }
+  }
+
+  .single-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    color: var(--clr-text-muted);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--clr-border);
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .single-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .single-featured-wrap {
+    margin-bottom: 32px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .single-featured-wrap img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+  }
+
+  /* Rich Post Content Typography */
+  .post-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--clr-text-main);
+  }
+  .post-content p {
+    margin-bottom: 22px;
+  }
+  .post-content h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--clr-forest);
+    margin: 36px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--clr-border-light);
+  }
+  .post-content h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--clr-text-main);
+    margin: 28px 0 12px 0;
+  }
+  .post-content blockquote {
+    background-color: var(--clr-ivory);
+    border-left: 4px solid var(--clr-orange);
+    padding: 16px 20px;
+    font-style: italic;
+    color: var(--clr-text-main);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 24px 0;
+  }
+  .post-content ul, .post-content ol {
+    margin: 0 0 24px 24px;
+    padding-left: 10px;
+  }
+  .post-content li {
+    margin-bottom: 8px;
+  }
+
+  /* Callout CTA Box inside Post */
+  .post-cta-banner {
+    background: linear-gradient(135deg, #104B26 0%, #0B351B 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 28px;
+    margin: 36px 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    border-left: 6px solid var(--clr-orange);
+    box-shadow: var(--shadow-md);
+  }
+  .post-cta-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+  }
+  .post-cta-info {
+    flex: 1;
+    min-width: 240px;
+  }
+  .post-cta-info h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #FFFFFF;
+  }
+  .post-cta-info p {
+    font-size: 13.5px;
+    color: rgba(255, 249, 239, 0.85);
+    margin-bottom: 12px;
+  }
+  .btn-cta-market {
+    background-color: var(--clr-orange);
+    color: #FFFFFF !important;
+    padding: 9px 20px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease;
+  }
+  .btn-cta-market:hover {
+    background-color: var(--clr-orange-hover);
+  }
+
+  /* Share Bar */
+  .social-share-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid var(--clr-border);
+    border-bottom: 1px solid var(--clr-border);
+    margin: 36px 0;
+    flex-wrap: wrap;
+  }
+  .share-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--clr-forest);
+  }
+  .share-btn {
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #FFFFFF !important;
+  }
+  .share-btn.whatsapp { background-color: #25D366; }
+  .share-btn.facebook { background-color: #1877F2; }
+  .share-btn.twitter { background-color: #111111; }
+
+  /* ── 8. Sidebar Widgets ── */
+  .sidebar-widget {
+    background-color: var(--clr-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--clr-border);
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .widget-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--clr-forest);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--clr-orange);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .about-widget-text {
+    font-size: 13px;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .sidebar-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .sidebar-pill {
+    background-color: var(--clr-ivory);
+    border: 1px solid var(--clr-border);
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--clr-forest);
+    transition: all 0.2s ease;
+  }
+  .sidebar-pill:hover {
+    background-color: var(--clr-forest);
+    color: #FFFFFF !important;
+    border-color: var(--clr-forest);
+  }
+
+  /* Festival Calendar Widget */
+  .festival-card {
+    background-color: var(--clr-orange-light);
+    border: 1px solid rgba(243, 107, 33, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .fest-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--clr-forest-dark);
+  }
+  .fest-flowers {
+    font-size: 12px;
+    color: var(--clr-orange);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* ── 9. Pagination ── */
+  .blog-pager {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    gap: 12px;
+  }
+  .blog-pager a {
+    background-color: var(--clr-forest);
+    color: #FFFFFF !important;
+    padding: 10px 20px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .blog-pager a:hover {
+    background-color: var(--clr-orange);
+  }
+
+  /* ── 10. Official Footer (Matching FlowersOffers.com) ── */
+  .site-footer {
+    background-color: var(--clr-forest);
+    color: #FFFFFF;
+    padding: 60px 0 24px 0;
+    margin-top: 60px;
+    border-top: 4px solid var(--clr-orange);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 48px;
+  }
+  @media (min-width: 640px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 992px) {
+    .footer-grid { grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr; }
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--clr-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  .footer-col p {
+    font-size: 13px;
+    color: rgba(255, 249, 239, 0.8);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255, 249, 239, 0.8);
+    transition: all 0.2s ease;
+  }
+  .footer-links a:hover {
+    color: var(--clr-orange);
+    padding-left: 4px;
+  }
+
+  .footer-contact-info {
+    font-size: 12.5px;
+    color: rgba(255, 249, 239, 0.85);
+    line-height: 1.8;
+  }
+  .footer-trust-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    background-color: rgba(255,255,255,0.1);
+    color: var(--clr-leaf);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* ── 11. Footer Copyright & Attribution Bar ── */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    color: rgba(255, 249, 239, 0.7);
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+  .footer-bottom a {
+    color: var(--clr-orange);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+  .footer-badges-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .footer-pill-tag {
+    background-color: rgba(255,255,255,0.08);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+
+  /* Responsive toggles */
+  .mobile-menu-btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--clr-forest);
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    .mobile-menu-btn { display: none; }
+  }
+  ]]></b:skin>
+</head>
+
+<body>
+  <!-- 1. Top Announcement Bar -->
+  <aside class='top-bar'>
+    <div class='container top-bar-inner'>
+      <div class='top-bar-badge'>
+        <span class='dot'/>
+        <span>Direct from 500+ Indian Flower Growers across 28 States</span>
+      </div>
+      <div>
+        <a class='top-bar-link' href='https://flowersoffers.com' target='_blank'>
+          <span>Visit Main Flower Marketplace</span>
+          <span>&#8594;</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 2. Main Site Header -->
+  <header class='site-header'>
+    <div class='container header-inner'>
+      <!-- Logo Area -->
+      <a class='brand-area' href='https://flowersoffers.com' target='_blank'>
+        <img alt='FlowersOffers.com Logo' class='brand-logo-img' src='https://flowersoffers.vercel.app/logo.png'/>
+        <div class='brand-text-fallback'>
+          <div class='brand-title'>Flowers<span>Offers</span>.com</div>
+          <div class='brand-tagline'>India&#39;s Fresh Flower Marketplace Blog</div>
+        </div>
+      </a>
+
+      <!-- Header Right: Search & Marketplace CTA -->
+      <div class='header-actions'>
+        <div class='header-search'>
+          <form action='/search' method='get'>
+            <input name='q' placeholder='Search flower guides, rituals, care...' type='text'/>
+            <button aria-label='Search' type='submit'>&#128269;</button>
+          </form>
+        </div>
+        <a class='btn-shop-market' href='https://flowersoffers.com/flowers' target='_blank'>
+          <span>&#128144; Shop Flowers</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Navigation Bar -->
+  <nav class='nav-bar'>
+    <div class='container'>
+      <ul class='nav-menu'>
+        <li class='nav-item active'><a href='/'>Blog Home</a></li>
+        <li class='nav-item'><a href='/search/label/Pooja%20Flowers'>Daily Pooja Flowers</a></li>
+        <li class='nav-item'><a href='/search/label/Festivals'>Indian Festivals &amp; Vrats</a></li>
+        <li class='nav-item'><a href='/search/label/Flower%20Care'>Flower Care &amp; Freshness</a></li>
+        <li class='nav-item'><a href='/search/label/Weddings'>Weddings &amp; Mandap</a></li>
+        <li class='nav-item'><a href='/search/label/Farmer%20Stories'>Farmer Stories</a></li>
+        <li class='nav-item special'><a href='https://flowersoffers.com/bulk-orders' target='_blank'>Wholesale B2B &#8594;</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 4. Hero Banner (Visible on Home Page) -->
+  <b:if cond='data:view.isHomepage'>
+    <section class='blog-hero'>
+      <div class='container blog-hero-inner'>
+        <div class='hero-eyebrow'>
+          <span>&#127807; Flower Wisdom &amp; Indian Traditions</span>
+        </div>
+        <h1 class='hero-title'>
+          The Complete Guide to Sacred Blooms, Puja Rituals &amp; Farm Freshness
+        </h1>
+        <p class='hero-subtitle'>
+          Expert floral care guides, festival auspicious flower rituals, seasonal mandi insights, and farmer stories brought to you by FlowersOffers.com.
+        </p>
+        <div class='hero-badges'>
+          <span class='hero-tag'>&#129524; Genda &amp; Marigold</span>
+          <span class='hero-tag'>&#127801; Desi Fragrant Rose</span>
+          <span class='hero-tag'>&#127804; Madurai Malli</span>
+          <span class='hero-tag'>&#129703; Sacred Lotus</span>
+          <span class='hero-tag'>&#129532; Fresh Torans</span>
+        </div>
+      </div>
+    </section>
+  </b:if>
+
+  <!-- 5. Main Content & Sidebar Grid -->
+  <main class='container'>
+    <div class='layout-grid'>
+      <!-- Left Column: Posts Loop -->
+      <div class='main-posts-area'>
+        <b:section id='main' showaddelement='no'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+            <b:includable id='main'>
+              <!-- When multiple items: Grid of Article Cards -->
+              <b:if cond='data:view.isMultipleItems'>
+                <div class='posts-grid'>
+                  <b:loop values='data:posts' var='post'>
+                    <article class='post-card'>
+                      <div class='card-thumb'>
+                        <a expr:href='data:post.url'>
+                          <b:if cond='data:post.featuredImage'>
+                            <img expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                          <b:else/>
+                            <div class='card-thumb-fallback'>
+                              <span>&#127800;</span>
+                            </div>
+                          </b:if>
+                        </a>
+                        <b:if cond='data:post.labels'>
+                          <span class='card-category-badge'><data:post.labels.first.name/></span>
+                        </b:if>
+                      </div>
+                      <div class='card-body'>
+                        <div class='card-meta'>
+                          <span>&#128197; <data:post.date/></span>
+                        </div>
+                        <h2 class='card-title'>
+                          <a expr:href='data:post.url'><data:post.title/></a>
+                        </h2>
+                        <p class='card-snippet'>
+                          <data:post.snippet/>
+                        </p>
+                        <div class='card-footer'>
+                          <div class='card-author'>
+                            <span>&#127807;</span>
+                            <span><data:post.author.name/></span>
+                          </div>
+                          <a class='btn-read-more' expr:href='data:post.url'>Read Guide &#8594;</a>
+                        </div>
+                      </div>
+                    </article>
+                  </b:loop>
+                </div>
+
+                <!-- Pagination -->
+                <div class='blog-pager'>
+                  <b:if cond='data:newerPageUrl'>
+                    <a expr:href='data:newerPageUrl'>&#8592; Newer Guides</a>
+                  </b:if>
+                  <b:if cond='data:olderPageUrl'>
+                    <a expr:href='data:olderPageUrl'>Older Guides &#8594;</a>
+                  </b:if>
+                </div>
+
+              <b:else/>
+                <!-- Single Post Reading View -->
+                <b:loop values='data:posts' var='post'>
+                  <article class='single-post-card'>
+                    <div class='post-breadcrumb'>
+                      <a href='/'>Home</a>
+                      <span>&#8250;</span>
+                      <b:if cond='data:post.labels'>
+                        <a expr:href='data:post.labels.first.url'><data:post.labels.first.name/></a>
+                        <span>&#8250;</span>
+                      </b:if>
+                      <span><data:post.title/></span>
+                    </div>
+
+                    <h1 class='single-title'><data:post.title/></h1>
+
+                    <div class='single-meta-bar'>
+                      <div class='single-meta-item'>
+                        <span>&#128197;</span>
+                        <span><data:post.date/></span>
+                      </div>
+                      <div class='single-meta-item'>
+                        <span>&#9997;&#65039;</span>
+                        <span>By <data:post.author.name/></span>
+                      </div>
+                      <b:if cond='data:post.labels'>
+                        <div class='single-meta-item'>
+                          <span>&#127991;&#65039;</span>
+                          <span><data:post.labels.first.name/></span>
+                        </div>
+                      </b:if>
+                    </div>
+
+                    <b:if cond='data:post.featuredImage'>
+                      <div class='single-featured-wrap'>
+                        <img expr:alt='data:post.title' expr:src='data:post.featuredImage'/>
+                      </div>
+                    </b:if>
+
+                    <div class='post-content'>
+                      <data:post.body/>
+                    </div>
+
+                    <!-- Marketplace CTA Banner Inside Post -->
+                    <div class='post-cta-banner'>
+                      <div class='post-cta-icon'>&#127804;</div>
+                      <div class='post-cta-info'>
+                        <h3>Need Fresh Flowers for Your Home or Temple?</h3>
+                        <p>Order fresh Marigold, Desi Rose, Jasmine Strings, and Divine Lotus straight from 500+ Indian flower growers with guaranteed sunrise dispatch.</p>
+                        <a class='btn-cta-market' href='https://flowersoffers.com' target='_blank'>
+                          <span>Explore FlowersOffers.com</span>
+                          <span>&#8594;</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Social Share -->
+                    <div class='social-share-bar'>
+                      <span class='share-label'>Share this article:</span>
+                      <a class='share-btn whatsapp' expr:href='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title + &quot; &quot; + data:post.url' target='_blank'>WhatsApp</a>
+                      <a class='share-btn facebook' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url' target='_blank'>Facebook</a>
+                      <a class='share-btn twitter' expr:href='&quot;https://twitter.com/intent/tweet?text=&quot; + data:post.title + &quot;&amp;url=&quot; + data:post.url' target='_blank'>X / Twitter</a>
+                    </div>
+                  </article>
+                </b:loop>
+              </b:if>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </div>
+
+      <!-- Right Column: Sidebar -->
+      <aside class='sidebar-area'>
+        <!-- About FlowersOffers Widget -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'>&#127800; About FlowersOffers</h3>
+          <p class='about-widget-text'>
+            FlowersOffers.com&#8482; is India&#39;s pioneering farm-to-doorstep flower marketplace, directly connecting 500+ verified growers with devotees, florists, and wedding planners.
+          </p>
+          <a class='btn-shop-market' href='https://flowersoffers.com' style='width: 100%; justify-content: center;' target='_blank'>
+            <span>Visit Flower Marketplace</span>
+          </a>
+        </div>
+
+        <!-- Festival Essentials Widget -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'>&#129684; Upcoming Puja Festivals</h3>
+          <div class='festival-card'>
+            <div class='fest-name'>Diwali &amp; Lakshmi Puja</div>
+            <div class='fest-flowers'>Key Flowers: Yellow Genda, Lotus &amp; Toran Garlands</div>
+          </div>
+          <div class='festival-card'>
+            <div class='fest-name'>Navratri &amp; Dussehra</div>
+            <div class='fest-flowers'>Key Flowers: Desi Red Roses, Hibiscus &amp; Sevanti</div>
+          </div>
+          <div class='festival-card'>
+            <div class='fest-name'>Ganesh Chaturthi</div>
+            <div class='fest-flowers'>Key Flowers: Red Hibiscus, Durva grass &amp; Marigolds</div>
+          </div>
+          <a class='top-bar-link' href='https://flowersoffers.com' style='display: block; text-align: center; margin-top: 8px;' target='_blank'>
+            View Festival Calendar &#8594;
+          </a>
+        </div>
+
+        <!-- Topics & Categories -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'>&#127991;&#65039; Popular Floral Topics</h3>
+          <div class='sidebar-pills'>
+            <a class='sidebar-pill' href='/search/label/Pooja%20Flowers'>Pooja Flowers</a>
+            <a class='sidebar-pill' href='/search/label/Festivals'>Festivals</a>
+            <a class='sidebar-pill' href='/search/label/Flower%20Care'>Care Tips</a>
+            <a class='sidebar-pill' href='/search/label/Weddings'>Weddings</a>
+            <a class='sidebar-pill' href='/search/label/Farmer%20Stories'>Farmer Stories</a>
+            <a class='sidebar-pill' href='/search/label/Marigold'>Marigold</a>
+            <a class='sidebar-pill' href='/search/label/Jasmine'>Jasmine</a>
+            <a class='sidebar-pill' href='/search/label/Lotus'>Lotus</a>
+          </div>
+        </div>
+
+        <!-- Wholesale B2B Card -->
+        <div class='sidebar-widget' style='background: linear-gradient(135deg, #FFF3EB 0%, #FFF9EF 100%); border-color: rgba(243, 107, 33, 0.3);'>
+          <h3 class='widget-title' style='border-bottom-color: var(--clr-forest);'>&#127970; Wholesale &amp; Bulk Supply</h3>
+          <p class='about-widget-text'>
+            Are you a temple administrator, wedding decorator, or retail florist? Access wholesale crates with cold-chain delivery.
+          </p>
+          <a class='btn-cta-market' href='https://flowersoffers.com/bulk-orders' style='width: 100%; justify-content: center;' target='_blank'>
+            <span>Get Bulk Quote</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 6. Official Footer -->
+  <footer class='site-footer'>
+    <div class='container'>
+      <div class='footer-grid'>
+        <!-- Col 1: Brand & Story -->
+        <div class='footer-col'>
+          <h4>FlowersOffers.com</h4>
+          <p>
+            India&#39;s farm-to-doorstep flower marketplace connecting 500+ flower farmers directly with households, temples, florists, and wedding planners.
+          </p>
+          <div class='footer-contact-info'>
+            <div>&#128205; Singasandra Fulfillment Hub, Bengaluru, Karnataka - 560068</div>
+            <div>&#128222; Concierge &amp; B2B: +91 98765 43210 (6:00 AM &#8211; 10:00 PM IST)</div>
+            <div>&#9993;&#65039; wholesale@flowersoffers.com &#8226; care@flowersoffers.com</div>
+          </div>
+        </div>
+
+        <!-- Col 2: Fresh Collections -->
+        <div class='footer-col'>
+          <h4>Fresh Collections</h4>
+          <ul class='footer-links'>
+            <li><a href='https://flowersoffers.com/flowers' target='_blank'>Golden &amp; Saffron Marigold</a></li>
+            <li><a href='https://flowersoffers.com/flowers' target='_blank'>Fragrant Desi Red Roses</a></li>
+            <li><a href='https://flowersoffers.com/flowers' target='_blank'>GI-Tagged Madurai Malli</a></li>
+            <li><a href='https://flowersoffers.com/flowers' target='_blank'>Sacred Pink Temple Lotus</a></li>
+            <li><a href='https://flowersoffers.com/flowers' target='_blank'>Festive Torans &amp; Garlands</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Marketplace Links -->
+        <div class='footer-col'>
+          <h4>Marketplace Links</h4>
+          <ul class='footer-links'>
+            <li><a href='https://flowersoffers.com' target='_blank'>Main Marketplace</a></li>
+            <li><a href='https://flowersoffers.com/bulk-orders' target='_blank'>Wholesale B2B Quotations</a></li>
+            <li><a href='https://flowersoffers.com/farmers' target='_blank'>Farmer Partner Network</a></li>
+            <li><a href='https://flowersoffers.com/delivery-areas' target='_blank'>Delivery Pincode Coverage</a></li>
+            <li><a href='https://flowersoffers.com/about' target='_blank'>About Us &amp; Mission</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Trust & Dispatch Guarantee -->
+        <div class='footer-col'>
+          <h4>Freshness Promise</h4>
+          <p>
+            Flowers plucked fresh at 4:30 AM dawn from our partner estates, water-misted, and dispatched in aerated packaging for daily pujas.
+          </p>
+          <span class='footer-trust-badge'>&#10003; HSN 0603 (0% GST Natural Fresh Cut Flora)</span>
+          <div class='footer-trust-badge' style='margin-top: 6px; color: var(--clr-orange);'>&#10003; Same-Day Sunrise Delivery</div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Copyright & Attribution Bar -->
+      <div class='footer-bottom'>
+        <div>
+          <div>&#169; 2026 FlowersOffers.com&#8482; Agri-Commerce Pvt. Ltd. All rights reserved.</div>
+          <div style='margin-top: 4px;'>
+            Designed and Developed by <a href='https://thoshotech.com' rel='noopener noreferrer' target='_blank'>thoshotech.com</a>
+          </div>
+        </div>
+        <div class='footer-badges-list'>
+          <span class='footer-pill-tag'>&#10003; HSN 0603 (0% GST)</span>
+          <span class='footer-pill-tag'>&#10003; Razorpay Secured</span>
+          <span class='footer-pill-tag'>&#10003; Pan-India Logistics</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
