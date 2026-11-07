@@ -157,7 +157,13 @@ export default function Footer() {
         {/* ── Copyright & Bottom Links ── */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#FFF9EF]/60">
           <div>
-            © {new Date().getFullYear()} FlowersOffers.com. All rights reserved.
+            <div>© {new Date().getFullYear()} FlowersOffers.com. All rights reserved.</div>
+            <div className="mt-1 text-[#FFF9EF]/80">
+              Designed and Developed by{" "}
+              <a href="https://thoshotech.com" target="_blank" rel="noopener noreferrer" className="text-[#F36B21] hover:underline font-semibold">
+                thoshotech.com
+              </a>
+            </div>
           </div>
           <div className="flex gap-4">
             <Link href="/about" className="hover:underline">About Us</Link>
