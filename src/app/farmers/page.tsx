@@ -105,6 +105,15 @@ export default function FarmersPage() {
                 🤝 Partner as a Flower Farmer
               </a>
             </div>
+
+            {/* Official High-Resolution Direct From Farmers Infographic Banner */}
+            <div className="max-w-5xl mx-auto mt-8 sm:mt-10 rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl">
+              <img
+                src="/images/brand/hero-direct-farmers.jpg"
+                alt="FlowersOffers.com — Fresh Flowers Direct from Farmers to Your Doorstep"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </section>
 

@@ -2675,6 +2675,9 @@
     .sm\:col-span-2 {
       grid-column: span 2 / span 2;
     }
+    .sm\:mt-10 {
+      margin-top: calc(var(--spacing) * 10);
+    }
     .sm\:inline {
       display: inline;
     }
@@ -2743,6 +2746,9 @@
     }
     .sm\:self-auto {
       align-self: auto;
+    }
+    .sm\:rounded-3xl {
+      border-radius: var(--radius-3xl);
     }
     .sm\:rounded-full {
       border-radius: calc(infinity * 1px);
