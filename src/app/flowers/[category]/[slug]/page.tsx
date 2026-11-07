@@ -169,7 +169,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

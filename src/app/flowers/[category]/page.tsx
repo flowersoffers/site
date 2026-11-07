@@ -122,7 +122,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

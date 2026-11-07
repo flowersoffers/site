@@ -7,7 +7,7 @@ import BrandLogo from "./BrandLogo";
 const SCREENS = [
   { id: "homepage", label: "Homepage", href: "/", icon: "🏠" },
   { id: "category", label: "Category", href: "/flowers", icon: "💐" },
-  { id: "product-detail", label: "Product Detail", href: "/flowers/bouquets/prod-002", icon: "🌹" },
+  { id: "product-detail", label: "Product Detail", href: "/flowers/rose/fresh-red-roses-dozen", icon: "🌹" },
   { id: "cart", label: "Cart & Checkout", href: "/cart", icon: "🛒" },
   { id: "about", label: "About Us", href: "/about", icon: "🌸" },
   { id: "occasions", label: "Occasions", href: "/festival/diwali", icon: "🎉" },

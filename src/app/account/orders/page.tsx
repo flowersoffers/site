@@ -167,7 +167,7 @@ export default function OrderHistoryPage() {
                         Total: ₹{ord.totalAmount}
                       </span>
                       <a
-                        href={`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(
+                        href={`https://wa.me/919876543210?text=${encodeURIComponent(
                           `Namaste FlowersOffers, I need live tracking for consignment ${ord.orderNumber}`
                         )}`}
                         target="_blank"
@@ -186,7 +186,7 @@ export default function OrderHistoryPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

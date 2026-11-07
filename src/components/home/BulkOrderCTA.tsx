@@ -133,7 +133,7 @@ export default function BulkOrderCTA() {
             📋 Request a Bulk Quotation ➔
           </Link>
           <a
-            href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20a%20bulk%20flower%20order%20quotation"
+            href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20a%20bulk%20flower%20order%20quotation"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline-white"

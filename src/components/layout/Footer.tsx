@@ -11,7 +11,7 @@ const FOOTER_SECTIONS = {
     { href: "/flowers/jasmine",        label: "Fragrant Madurai Jasmine" },
     { href: "/flowers/lotus",          label: "Sacred Temple Lotus Pairs" },
     { href: "/flowers/chrysanthemum",  label: "Yellow Sevanthi Blooms" },
-    { href: "/flowers/gerbera",        label: "Greenhouse Gerberas" },
+    { href: "/flowers/orchids",        label: "Exotic Purple Orchids" },
   ],
   "Occasions & Rituals": [
     { href: "/festival/diwali",        label: "Diwali Lakshmi Puja Blooms" },

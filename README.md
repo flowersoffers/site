@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 FlowersOffers.com — Production Agri-Commerce & Floral Marketplace
 
-## Getting Started
+**India's Freshest Farm-to-Doorstep Flower Marketplace (`FlowersOffers.com`)**
+Built with **Next.js (App Router)**, **React 19**, **Tailwind CSS**, **Zustand**, **Prisma ORM (SQLite / Cloud SQL)**, and **Google Cloud / Firebase Free-Tier Ready Architecture**.
 
-First, run the development server:
+---
+
+## ✨ Key Production Highlights
+
+1. **100% Owned Brand & Product Imagery**:
+   - Uses official **FlowersOffers.com Rainbow Lotus Logo** (`/public/logo.png`, `/public/images/brand/logo-rainbow.png`) and **Lotus Favicon** (`/public/favicon.png`).
+   - Uses owned brand photography across the Hero Showcase, About Us Story, and Farmer Partner Network (`/public/images/brand/*`).
+   - Uses 12 custom-generated high-resolution Indian floral product photographs (`/public/images/products/*`) — zero external Unsplash or broken placeholder links.
+2. **Complete B2C & B2B Multi-Role E-Commerce**:
+   - **B2C Storefront**: Shop by 11 flower categories, filter by ritual/occasion/pack format/price, customize pack weights (`250g`, `500g`, `1kg`, `5kg`, `1m string`, `Mandir Box`), add festive add-ons, and build custom 4-step bouquets.
+   - **Cart & 3-Step Checkout**: Persistent cart (`localStorage`), promo codes (`PUJA10`, `FRESH10`, `FIRSTFARM`), Sunrise Pooja slot scheduling (`6:00 AM – 8:30 AM`), Razorpay HMAC-SHA256 verification, B2B 14-Day Revolving Trade Credit, Cash on Delivery, and automatic **HSN 0603 (0% GST Exempt)** tax invoice (`INV-2026-XXXXX`) & cold-chain tracking (`TRK-2026-XXXXX`) generation.
+   - **6 Role Portals**: Super Admin (`/admin`), Farmer Grower Hub (`/farmer`), Wholesale Distributor (`/distributor`), Retail Florist (`/retailer`), Cold-Chain Fleet Ops (`/delivery`), and Customer Portal (`/account`).
+3. **Google Cloud Free-Tier Ready**:
+   - Includes `Dockerfile` (Cloud Run 2M free requests/month), `firebase.json` (Firebase Hosting + Frameworks), and automatic fallback store (`src/lib/fallbackStore.ts`) so all APIs work out-of-the-box.
+
+---
+
+## 🚀 Quick Start (Local Development)
 
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Initialize & seed local SQLite database
+npx prisma db push
+npm run db:seed
+
+# 3. Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ☁️ Deploying to Google Free Tiers (Cloud Run / Firebase)
 
-## Learn More
+### Option A: Google Cloud Run (Free Tier — `asia-south1` / `us-central1`)
+```bash
+gcloud run deploy flowersoffers \
+  --source . \
+  --region asia-south1 \
+  --allow-unauthenticated
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Option B: Firebase Hosting + Cloud Functions (Spark / Blaze Free Tier)
+```bash
+npm install -g firebase-tools
+firebase login
+firebase deploy
+```

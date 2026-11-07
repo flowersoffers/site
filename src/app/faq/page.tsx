@@ -121,7 +121,7 @@ export default function FAQPage() {
                 Contact Page
               </Link>
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/919876543210"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-xs px-5 py-2.5 rounded-full font-bold shadow-sm cursor-pointer"
@@ -135,7 +135,7 @@ export default function FAQPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

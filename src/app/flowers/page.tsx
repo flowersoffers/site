@@ -96,7 +96,7 @@ export default function FlowersPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
       <TemplateKitBar />
     </>
   );

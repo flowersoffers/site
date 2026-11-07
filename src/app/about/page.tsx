@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-3xl overflow-hidden border-2 border-[#E9E4D8] shadow-2xl aspect-[4/3] bg-[#FFF9EF]">
                 <img
-                  src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=900&q=85&fit=crop"
+                  src="/images/brand/about-us-banner.jpg"
                   alt="FlowersOffers boutique storefront and artisanal floral arrangements"
                   className="w-full h-full object-cover"
                 />
@@ -174,7 +174,7 @@ export default function AboutPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
       <TemplateKitBar />
     </>
   );

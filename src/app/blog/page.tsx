@@ -23,7 +23,7 @@ export const BLOG_POSTS = [
     readTime: "4 min read",
     date: "Feb 10, 2026",
     author: "FlowersOffers Editorial Team",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80&fit=crop",
+    image: "/images/products/desi-rose.jpg",
     excerpt:
       "From timeless Dutch velvet roses to rare pink Oriental lilies and delicate sweet peas, discover the secret emotional language of romantic floral gifts.",
   },
@@ -35,7 +35,7 @@ export const BLOG_POSTS = [
     readTime: "5 min read",
     date: "Feb 05, 2026",
     author: "Master Florist Team",
-    image: "https://images.unsplash.com/photo-1490750967868-88df5691166a?w=800&q=80&fit=crop",
+    image: "/images/products/mixed-pooja.jpg",
     excerpt:
       "Simple stem cutting, water temperature tricks, and sunlight balancing techniques straight from our boutique florists to keep your bouquet radiant.",
   },
@@ -47,7 +47,7 @@ export const BLOG_POSTS = [
     readTime: "5 min read",
     date: "Jan 28, 2026",
     author: "B2B Concierge Desk",
-    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80&fit=crop",
+    image: "/images/products/luxury-bouquet.jpg",
     excerpt:
       "How elegant purple orchids, clean white lilies, and architectural greens leave a memorable impression on executive partners and clients.",
   },
@@ -59,7 +59,7 @@ export const BLOG_POSTS = [
     readTime: "5 min read",
     date: "Oct 18, 2025",
     author: "FlowersOffers Botanical Team",
-    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=80&fit=crop",
+    image: "/images/products/marigold.jpg",
     excerpt:
       "Discover why golden yellow and orange marigolds along with sacred pink lotus are considered essential for inviting Goddess Lakshmi and Lord Ganesha.",
   },
@@ -71,7 +71,7 @@ export const BLOG_POSTS = [
     readTime: "6 min read",
     date: "Sep 02, 2025",
     author: "FlowersOffers Kerala Team",
-    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&q=80&fit=crop",
+    image: "/images/products/luxury-bouquet.jpg",
     excerpt:
       "A 10-day walkthrough of selecting Thumba, Chemparathy, Sevvanthi, and Marigold for each concentric ring of your Onam flower carpet.",
   },
@@ -83,7 +83,7 @@ export const BLOG_POSTS = [
     readTime: "7 min read",
     date: "Jul 29, 2025",
     author: "FlowersOffers B2B Desk",
-    image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=800&q=80&fit=crop",
+    image: "/images/products/marigold-garland.jpg",
     excerpt:
       "How to calculate flower kilograms for stage backdrops, entrance arches, and varmalas without paying extra to middlemen contractors.",
   },
@@ -226,7 +226,7 @@ export default function BlogListingPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
       <TemplateKitBar />
     </>
   );

@@ -109,7 +109,7 @@ export default function CartPage() {
                         nameHi: "प्रीमियम लाल गुलाब गुलदस्ता",
                         pricePerUnit: 1499,
                         unit: "Bouquet",
-                        imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80&fit=crop",
+                        imageUrl: "/images/products/desi-rose.jpg",
                         category: "bouquets",
                       }),
                       1
@@ -121,7 +121,7 @@ export default function CartPage() {
                         nameHi: "प्रीमियम चॉकलेट बॉक्स",
                         pricePerUnit: 299,
                         unit: "Box",
-                        imageUrl: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800&q=80&fit=crop",
+                        imageUrl: "/images/products/luxury-bouquet.jpg",
                         category: "combos",
                       }),
                       1
@@ -376,7 +376,7 @@ export default function CartPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

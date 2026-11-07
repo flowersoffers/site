@@ -141,7 +141,7 @@ export default function BulkOrdersPage() {
                 📋 Request Free Bulk Quotation
               </a>
               <a
-                href="https://wa.me/91XXXXXXXXXX?text=Namaste,%20I%20need%20a%20B2B%20wholesale%20flower%20quote"
+                href="https://wa.me/919876543210?text=Namaste,%20I%20need%20a%20B2B%20wholesale%20flower%20quote"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn px-7 py-3.5 text-xs sm:text-sm font-bold rounded-full border-2 border-white text-white hover:bg-white/15 transition-all shadow-md cursor-pointer"
@@ -274,7 +274,7 @@ export default function BulkOrdersPage() {
                 </p>
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                   <a
-                    href={`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(
+                    href={`https://wa.me/919876543210?text=${encodeURIComponent(
                       `Hello FlowersOffers, I just submitted RFQ #${rfqNumber} for ${formData.quantityKg}kg for ${formData.city}, ${formData.state}. Please send the quote on WhatsApp.`
                     )}`}
                     target="_blank"
@@ -531,7 +531,7 @@ export default function BulkOrdersPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

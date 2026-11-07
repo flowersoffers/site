@@ -24,7 +24,7 @@ const SHOWCASE_BOUQUETS = [
     reviews: "1,256",
     tag: "Bestseller",
     badgeColor: "#104B26",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=85&fit=crop",
+    image: "/images/products/desi-rose.jpg",
     flowers: "24 Premium Red Dutch Roses with Gypsophila",
   },
   {
@@ -37,7 +37,7 @@ const SHOWCASE_BOUQUETS = [
     reviews: "2,430",
     tag: "Temple Sanctity",
     badgeColor: "#F36B21",
-    image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=900&q=85&fit=crop",
+    image: "/images/products/marigold.jpg",
     flowers: "Dense Saffron Orange African Marigold Heads",
   },
   {
@@ -50,7 +50,7 @@ const SHOWCASE_BOUQUETS = [
     reviews: "980",
     tag: "GI Certified",
     badgeColor: "#78B82A",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=900&q=85&fit=crop",
+    image: "/images/products/madurai-jasmine.jpg",
     flowers: "Pure White Natural Banana-Fiber Strung Buds",
   },
   {
@@ -63,7 +63,7 @@ const SHOWCASE_BOUQUETS = [
     reviews: "612",
     tag: "Ritual Pure",
     badgeColor: "#E91E63",
-    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=900&q=85&fit=crop",
+    image: "/images/products/sacred-lotus.jpg",
     flowers: "Untouched Farm Pond Blooms with Firm Stems",
   },
 ];

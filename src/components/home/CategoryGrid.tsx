@@ -7,20 +7,20 @@ interface CategoryGridProps {
 }
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  marigold:      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=85&fit=crop",
-  rose:          "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=500&q=85&fit=crop",
-  lotus:         "https://images.unsplash.com/photo-1562183241-840b8af0721e?w=500&q=85&fit=crop",
-  jasmine:       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85&fit=crop",
-  chrysanthemum: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=500&q=85&fit=crop",
-  lily:          "https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=500&q=85&fit=crop",
-  tuberose:      "https://images.unsplash.com/photo-1455582916367-25f75bfc6710?w=500&q=85&fit=crop",
-  mogra:         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=85&fit=crop",
-  hibiscus:      "https://images.unsplash.com/photo-1512003867696-6d5ce6835040?w=500&q=85&fit=crop",
-  crossandra:    "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=85&fit=crop",
-  garland:       "https://images.unsplash.com/photo-1587394057780-7b6fe860ed1b?w=500&q=85&fit=crop",
-  bulk:          "https://images.unsplash.com/photo-1490750967868-88df5691166a?w=500&q=85&fit=crop",
-  orchids:       "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=500&q=85&fit=crop",
-  mixed:         "https://images.unsplash.com/photo-1490750967868-88df5691166a?w=500&q=85&fit=crop",
+  marigold:      "/images/products/marigold.jpg",
+  rose:          "/images/products/desi-rose.jpg",
+  lotus:         "/images/products/sacred-lotus.jpg",
+  jasmine:       "/images/products/madurai-jasmine.jpg",
+  chrysanthemum: "/images/products/yellow-chrysanthemum.jpg",
+  lily:          "/images/products/rajnigandha-tuberose.jpg",
+  tuberose:      "/images/products/rajnigandha-tuberose.jpg",
+  mogra:         "/images/products/madurai-jasmine.jpg",
+  hibiscus:      "/images/products/red-hibiscus.jpg",
+  crossandra:    "/images/products/marigold.jpg",
+  garland:       "/images/products/marigold-garland.jpg",
+  bulk:          "/images/products/wholesale-crates.jpg",
+  orchids:       "/images/products/purple-orchids.jpg",
+  mixed:         "/images/products/mixed-pooja.jpg",
 };
 
 export default function CategoryGrid({ categories }: CategoryGridProps) {

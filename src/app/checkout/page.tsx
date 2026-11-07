@@ -90,7 +90,7 @@ export default function CheckoutPage() {
       unit: "bunch",
       pricePerUnit: 180,
       availablePacks: [],
-      imageUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
+      imageUrl: "/images/products/desi-rose.jpg",
       images: [],
       description: "Stem-length 50-60cm greenhouse cultivated Dutch red roses.",
       growingRegion: "Hosur, Tamil Nadu",

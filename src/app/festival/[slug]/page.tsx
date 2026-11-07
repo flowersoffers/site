@@ -280,7 +280,7 @@ export default async function FestivalDetailPage({ params }: FestivalPageProps) 
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

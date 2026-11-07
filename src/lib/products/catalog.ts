@@ -78,10 +78,10 @@ export const PRODUCTS: Product[] = [
       { label: "1 Kilogram", value: 1000, unit: "1kg", price: 110 },
       { label: "5 Kg Event Pack", value: 5000, unit: "5kg", price: 475 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/marigold.jpg",
     images: [
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=85&fit=crop",
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=85&fit=crop",
+      "/images/products/marigold.jpg",
+      "/images/products/yellow-chrysanthemum.jpg",
     ],
     description:
       "Vibrant golden yellow and saffron marigold blossoms handpicked at dawn. High in natural carotenoids, with dense ruffled petals that stay crisp and upright for over 24 hours. Sourced directly from grower cooperatives in the Nashik & Mysuru belts.",
@@ -131,10 +131,10 @@ export const PRODUCTS: Product[] = [
       { label: "250g Loose Petals", value: 250, unit: "250g", price: 85 },
       { label: "1 kg Loose Petals for Shower", value: 1000, unit: "1kg", price: 290 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/desi-rose.jpg",
     images: [
-      "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=800&q=85&fit=crop",
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=85&fit=crop",
+      "/images/products/desi-rose.jpg",
+      "/images/products/desi-rose.jpg",
     ],
     description:
       "Classic Indian Desi Gulab bursting with rich natural rose damask perfume. Plucked fresh with intact stems and protective outer sepals. Perfect for devotional archana, rose water extraction, wedding varmalas, and festive shower welcomes.",
@@ -184,9 +184,9 @@ export const PRODUCTS: Product[] = [
       { label: "250g Loose Buds", value: 250, unit: "250g", price: 130 },
       { label: "500g Loose Buds", value: 500, unit: "500g", price: 240 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/madurai-jasmine.jpg",
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fit=crop",
+      "/images/products/madurai-jasmine.jpg",
     ],
     description:
       "Authentic geographical indication (GI) tagged Madurai Malligai. Characterized by dense, pointed white buds with an intoxicating nocturnal perfume that blooms open over 24 hours. Intricately hand-woven by experienced floral artisans.",
@@ -235,10 +235,10 @@ export const PRODUCTS: Product[] = [
       { label: "Panchakamal Pack (5 pcs)", value: 5, unit: "5 pcs", price: 155 },
       { label: "Mandir Box (11 pcs)", value: 11, unit: "11 pcs", price: 320 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1562183241-840b8af0721e?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/sacred-lotus.jpg",
     images: [
-      "https://images.unsplash.com/photo-1562183241-840b8af0721e?w=800&q=85&fit=crop",
-      "https://images.unsplash.com/photo-1593253879-5b41ebccbc60?w=800&q=85&fit=crop",
+      "/images/products/sacred-lotus.jpg",
+      "/images/products/sacred-lotus.jpg",
     ],
     description:
       "Pure freshwater Indian Lotus (Nelumbo nucifera) harvested from clean aquatic ponds. Plucked with long stems while the bud is firm and tightly closed, allowing you to gently unfold each layer of petals during your puja aarti.",
@@ -288,9 +288,9 @@ export const PRODUCTS: Product[] = [
       { label: "Set of 5 Garlands (Mandir Pack)", value: 5, unit: "5 garlands", price: 250 },
       { label: "Bulk Box of 20 Garlands", value: 20, unit: "20 garlands", price: 920 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1587394057780-7b6fe860ed1b?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/marigold-garland.jpg",
     images: [
-      "https://images.unsplash.com/photo-1587394057780-7b6fe860ed1b?w=800&q=85&fit=crop",
+      "/images/products/marigold-garland.jpg",
     ],
     description:
       "Expertly hand-strung 1-metre long marigold garlands using fresh orange and yellow blossoms interlaced with auspicious mango leaves. Ready to hang on main entrance doors, car hoods, temple idols, or festive pandals.",
@@ -338,9 +338,9 @@ export const PRODUCTS: Product[] = [
       { label: "3 Kg Weekly Ritual Pack", value: 3000, unit: "3kg", price: 280 },
       { label: "10 Kg Temple Bulk Box", value: 10000, unit: "10kg", price: 750 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1490750967868-88df5691166a?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/mixed-pooja.jpg",
     images: [
-      "https://images.unsplash.com/photo-1490750967868-88df5691166a?w=800&q=85&fit=crop",
+      "/images/products/mixed-pooja.jpg",
     ],
     description:
       "Balanced devotional assortment comprising yellow marigold heads, crimson rose petals, white jasmine buds, and golden chrysanthemum. Prepared each morning specifically for multi-deity home pujas and temple trusts.",
@@ -388,9 +388,9 @@ export const PRODUCTS: Product[] = [
       { label: "Bunch of 25 Stems (Vase Pack)", value: 25, unit: "25 stems", price: 280 },
       { label: "500g Loose Florets", value: 500, unit: "500g", price: 175 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1455582916367-25f75bfc6710?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/rajnigandha-tuberose.jpg",
     images: [
-      "https://images.unsplash.com/photo-1455582916367-25f75bfc6710?w=800&q=85&fit=crop",
+      "/images/products/rajnigandha-tuberose.jpg",
     ],
     description:
       "Long-stemmed, pure white double-petal Rajnigandha stalks bursting with nocturnal fragrance. Fills your home mandir and living areas with a soothing, divine floral perfume for up to 4–5 days.",
@@ -436,9 +436,9 @@ export const PRODUCTS: Product[] = [
       { label: "Sacred 11 Flowers (Durga Puja Pack)", value: 11, unit: "11 pcs", price: 50 },
       { label: "Pack of 21 Flowers (Ganesh Archana)", value: 21, unit: "21 pcs", price: 90 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1512003867696-6d5ce6835040?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/red-hibiscus.jpg",
     images: [
-      "https://images.unsplash.com/photo-1512003867696-6d5ce6835040?w=800&q=85&fit=crop",
+      "/images/products/red-hibiscus.jpg",
     ],
     description:
       "Vivid crimson single-petal Japa Kusum flowers harvested with intact calyx. Carefully protected in individual padded compartments so delicate petals do not bruise in transit.",
@@ -485,9 +485,9 @@ export const PRODUCTS: Product[] = [
       { label: "1 Kilogram Bag", value: 1000, unit: "1kg", price: 170 },
       { label: "5 Kg Event Carton", value: 5000, unit: "5kg", price: 750 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/yellow-chrysanthemum.jpg",
     images: [
-      "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=800&q=85&fit=crop",
+      "/images/products/yellow-chrysanthemum.jpg",
     ],
     description:
       "Densely layered, resilient golden-yellow Chrysanthemum blossoms from Karnataka's highland farms. Retains crisp petaline structure for over 48 hours, making it the premier choice for floral floor rangolis (Pookkalam).",
@@ -532,9 +532,9 @@ export const PRODUCTS: Product[] = [
       { label: "Bunch of 10 Stems", value: 10, unit: "10 stems", price: 260 },
       { label: "Box of 25 Stems (Event Pack)", value: 25, unit: "25 stems", price: 600 },
     ],
-    imageUrl: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800&q=85&fit=crop",
+    imageUrl: "/images/products/purple-orchids.jpg",
     images: [
-      "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800&q=85&fit=crop",
+      "/images/products/purple-orchids.jpg",
     ],
     description:
       "Striking violet-purple Dendrobium orchid stems sourced from climate-controlled shade-net nurseries in Kerala and Sikkim. Incredible vase life of 7 to 10 days, perfect for luxury wedding backdrops, brass urli floating arrangements, and contemporary corporate welcomes.",

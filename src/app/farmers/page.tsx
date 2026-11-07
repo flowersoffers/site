@@ -35,7 +35,7 @@ export default function FarmersPage() {
       harvest: "120 kg daily during festive periods",
       quote:
         "Before FlowersOffers, wholesale agents took 20% commission at the mandi and delayed payment. Today, the refrigerated van picks up from our village at 6:00 AM, and payment reaches my bank account weekly.",
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&q=80",
+      image: "/images/brand/hero-direct-farmers.jpg",
     },
     {
       name: "Meenakshi Sundaram",
@@ -45,7 +45,7 @@ export default function FarmersPage() {
       harvest: "40 kg morning harvest",
       quote:
         "Jasmine buds must be packed with natural morning dew to unfold during temple archana. Direct dispatch preserves that sacred fragrance all the way to customer homes.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+      image: "/images/brand/hero-marigold-farm.jpg",
     },
     {
       name: "Suresh & Savita Bende",
@@ -55,7 +55,7 @@ export default function FarmersPage() {
       harvest: "80 kg loose petals + 500 stems",
       quote:
         "The digital weighing scale at the cluster collection hub gives fair, honest weight. We receive fair compensation per kilogram regardless of unpredictable mandi fluctuations.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      image: "/images/brand/hero-doorstep-delivery.jpg",
     },
     {
       name: "Bikash Mondal",
@@ -65,7 +65,7 @@ export default function FarmersPage() {
       harvest: "200 blooms daily for temple puja",
       quote:
         "Lotus flowers require gentle stem protection. The ventilated corrugated boxes provided by FlowersOffers ensure every single lotus reaches the temple mandir with pristine petals.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+      image: "/images/brand/hero-packaging-hub.jpg",
     },
   ];
 
@@ -370,7 +370,7 @@ export default function FarmersPage() {
       </main>
 
       <Footer />
-      <WhatsAppFloat phoneNumber="91XXXXXXXXXX" />
+      <WhatsAppFloat phoneNumber="919876543210" />
     </>
   );
 }

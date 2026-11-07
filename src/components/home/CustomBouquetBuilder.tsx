@@ -12,11 +12,11 @@ if (typeof window !== "undefined") {
 
 // 4 Steps definition
 const FLOWER_OPTIONS = [
-  { id: "roses", name: "Velvet Roses", price: 699, emoji: "🌹", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80&fit=crop" },
-  { id: "lilies", name: "Oriental Lilies", price: 899, emoji: "🌸", image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80&fit=crop" },
-  { id: "orchids", name: "Exotic Orchids", price: 999, emoji: "🪻", image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=600&q=80&fit=crop" },
-  { id: "carnations", name: "Pastel Carnations", price: 599, emoji: "🌺", image: "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=600&q=80&fit=crop" },
-  { id: "sunflowers", name: "Radiant Sunflowers", price: 749, emoji: "🌻", image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=600&q=80&fit=crop" },
+  { id: "roses", name: "Velvet Roses", price: 699, emoji: "🌹", image: "/images/products/desi-rose.jpg" },
+  { id: "lilies", name: "Oriental Lilies", price: 899, emoji: "🌸", image: "/images/products/luxury-bouquet.jpg" },
+  { id: "orchids", name: "Exotic Orchids", price: 999, emoji: "🪻", image: "/images/products/purple-orchids.jpg" },
+  { id: "carnations", name: "Pastel Carnations", price: 599, emoji: "🌺", image: "/images/products/red-hibiscus.jpg" },
+  { id: "sunflowers", name: "Radiant Sunflowers", price: 749, emoji: "🌻", image: "/images/products/marigold.jpg" },
 ];
 
 const COLOR_OPTIONS = [

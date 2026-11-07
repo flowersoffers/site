@@ -115,7 +115,7 @@ export default function ProductDetailView({
   };
 
   const whatsappMessage = `Namaste FlowersOffers! I would like to order fresh "${product.nameEn}" (${quantity}x ${selectedPack.label} @ ₹${totalPrice}). Please confirm availability for my PIN code.`;
-  const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">

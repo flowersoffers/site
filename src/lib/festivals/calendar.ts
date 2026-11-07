@@ -19,8 +19,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "diwali-2025",
     name: "Diwali",
     nameHi: "दीवाली",
-    date: "2025-10-20",
-    endDate: "2025-10-24",
+    date: "2026-11-08",
+    endDate: "2026-11-12",
     region: "pan-india",
     flowers: ["marigold", "lotus", "rose", "chrysanthemum"],
     colors: ["#FF6B35", "#FFD700", "#FF4500"],
@@ -38,8 +38,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "navratri-2025",
     name: "Navratri",
     nameHi: "नवरात्रि",
-    date: "2025-10-02",
-    endDate: "2025-10-11",
+    date: "2026-10-11",
+    endDate: "2026-10-20",
     region: "pan-india",
     flowers: ["marigold", "jasmine", "hibiscus", "rose"],
     colors: ["#FF0000", "#FF6B35", "#FFD700", "#00FF00"],
@@ -56,8 +56,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "onam-2025",
     name: "Onam",
     nameHi: "ओणम",
-    date: "2025-09-05",
-    endDate: "2025-09-15",
+    date: "2027-08-26",
+    endDate: "2027-09-05",
     region: "south",
     flowers: ["chrysanthemum", "marigold", "ixora", "crossandra", "blue-lotus"],
     colors: ["#FFD700", "#FF6B35", "#FFFFFF", "#FF69B4"],
@@ -75,8 +75,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "ganesh-chaturthi-2025",
     name: "Ganesh Chaturthi",
     nameHi: "गणेश चतुर्थी",
-    date: "2025-08-27",
-    endDate: "2025-09-06",
+    date: "2027-09-04",
+    endDate: "2027-09-14",
     region: "west",
     flowers: ["marigold", "lotus", "durva-grass", "hibiscus", "mogra"],
     colors: ["#FF6B35", "#FFD700", "#FFFFFF"],
@@ -94,8 +94,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "pongal-2026",
     name: "Pongal",
     nameHi: "पोंगल",
-    date: "2026-01-14",
-    endDate: "2026-01-17",
+    date: "2027-01-14",
+    endDate: "2027-01-17",
     region: "south",
     flowers: ["marigold", "jasmine", "chrysanthemum", "banana-flower"],
     colors: ["#FFD700", "#FFFFFF", "#FF6B35"],
@@ -113,7 +113,7 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "holi-2026",
     name: "Holi",
     nameHi: "होली",
-    date: "2026-03-04",
+    date: "2027-03-22",
     region: "pan-india",
     flowers: ["marigold", "rose", "palash"],
     colors: ["#FF0000", "#FF69B4", "#FFFF00", "#00FF00", "#FF6B35"],
@@ -130,7 +130,7 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "karva-chauth-2025",
     name: "Karva Chauth",
     nameHi: "करवा चौथ",
-    date: "2025-10-20",
+    date: "2026-11-08",
     region: "north",
     flowers: ["rose", "marigold", "jasmine", "lotus"],
     colors: ["#FF0000", "#FF69B4", "#FFD700"],
@@ -147,8 +147,8 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "durga-puja-2025",
     name: "Durga Puja",
     nameHi: "दुर्गा पूजा",
-    date: "2025-10-01",
-    endDate: "2025-10-05",
+    date: "2026-10-17",
+    endDate: "2026-10-21",
     region: "east",
     flowers: ["shiuli", "lotus", "marigold", "hibiscus"],
     colors: ["#FF6B35", "#FFD700", "#FF0000", "#FFFFFF"],
@@ -165,7 +165,7 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "raksha-bandhan-2025",
     name: "Raksha Bandhan",
     nameHi: "रक्षाबंधन",
-    date: "2025-08-09",
+    date: "2027-08-17",
     region: "pan-india",
     flowers: ["rose", "marigold", "jasmine"],
     colors: ["#FF69B4", "#FFD700", "#FF0000"],
@@ -181,7 +181,7 @@ export const INDIAN_FESTIVALS: Festival[] = [
     id: "christmas-2025",
     name: "Christmas",
     nameHi: "क्रिसमस",
-    date: "2025-12-25",
+    date: "2026-12-25",
     region: "pan-india",
     flowers: ["poinsettia", "rose", "chrysanthemum", "lily"],
     colors: ["#FF0000", "#FFFFFF", "#00AA00"],
@@ -196,14 +196,17 @@ export const INDIAN_FESTIVALS: Festival[] = [
   },
 ];
 
-export function getUpcomingFestivals(daysAhead = 30): Festival[] {
+export function getUpcomingFestivals(daysAhead = 90): Festival[] {
   const today = new Date();
   const future = new Date(today.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  return INDIAN_FESTIVALS.filter((f) => {
+  const within = INDIAN_FESTIVALS.filter((f) => {
     const fDate = new Date(f.date);
     return fDate >= today && fDate <= future;
   }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+  if (within.length > 0) return within;
+  return INDIAN_FESTIVALS.slice(0, 4);
 }
 
 export function getNextFestival(): Festival | null {
