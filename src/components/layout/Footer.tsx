@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import BrandLogo from "./BrandLogo";
+import {
+  BANGALORE_LOCALITIES,
+  FLORAL_SERVICES,
+  PAN_INDIA_CITIES,
+} from "@/lib/seo/locationsAndServices";
 
 const FOOTER_SECTIONS = {
   "Flower Collections": [
@@ -98,35 +103,28 @@ export default function Footer() {
 
       {/* ── Main Footer Columns (Proportional Sizing, No Squeeze) ── */}
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
-          {/* Brand Bio & Official Logo */}
-          <div className="lg:col-span-2 space-y-4 pr-0 lg:pr-6">
-            <div className="bg-white/95 p-3 rounded-2xl inline-block shadow-sm">
-              <BrandLogo size="md" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 pb-12 border-b border-white/10">
+          <div className="lg:col-span-2 space-y-4">
+            <div className="bg-white p-3 rounded-2xl inline-block shadow-md">
+              <BrandLogo variant="full" />
             </div>
-            <p className="text-xs sm:text-sm text-[#FFF9EF]/80 leading-relaxed max-w-md">
-              FlowersOffers.com connects flower farmers, wholesale distributors, retail florists, temples, and event planners through one transparent, fresh-cut Indian agri-commerce marketplace.
+            <p className="text-xs text-[#FFF9EF]/80 leading-relaxed max-w-sm">
+              India's farm-to-doorstep flower marketplace connecting 500+ flower farmers across 28 states directly with households, temples, wedding planners, and florists.
             </p>
-            <div className="text-xs text-[#FFF9EF]/70 space-y-1">
+            <div className="text-xs text-[#FFF9EF]/75 space-y-1">
               <div>📍 Singasandra Fulfillment Hub, Bengaluru, Karnataka - 560068</div>
-              <div>📞 Support Desk: 6:00 AM – 10:00 PM, 7 Days a Week</div>
-              <div>📧 B2B Enquiries: wholesale@flowersoffers.com</div>
+              <div>📞 Concierge &amp; B2B Desk: +91 98765 43210 (6:00 AM – 10:00 PM IST)</div>
+              <div>✉️ wholesale@flowersoffers.com • care@flowersoffers.com</div>
             </div>
           </div>
 
-          {/* Dynamic Link Columns */}
-          {Object.entries(FOOTER_SECTIONS).slice(0, 3).map(([title, links]) => (
+          {Object.entries(FOOTER_SECTIONS).map(([title, links]) => (
             <div key={title} className="space-y-3">
-              <h4 className="text-xs font-bold text-[#F36B21] uppercase tracking-wider">
-                {title}
-              </h4>
+              <h4 className="font-bold text-[#F36B21] text-xs uppercase tracking-wider">{title}</h4>
               <ul className="space-y-2 text-xs">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-[#FFF9EF]/80 hover:text-white transition-colors block py-0.5"
-                    >
+                    <Link href={link.href} className="text-[#FFF9EF]/80 hover:text-white transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -134,6 +132,78 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* ── Hyperlocal SEO Directory Grid ── */}
+        <div className="py-10 border-b border-white/10 space-y-8 text-xs text-[#FFF9EF]/80">
+          {/* Bangalore Localities */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="font-bold text-[#F36B21] text-xs uppercase tracking-wider">
+                🌸 Bangalore Flower Delivery (6 AM Sunrise Drop)
+              </h4>
+              <Link href="/bangalore" className="text-[#78B82A] hover:underline font-semibold text-[11px]">
+                View All 32 Bangalore Delivery Areas →
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 text-[11px]">
+              {BANGALORE_LOCALITIES.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  href={`/bangalore/${loc.slug}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Floral Services */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="font-bold text-[#F36B21] text-xs uppercase tracking-wider">
+                🌿 Specialized B2B &amp; Consumer Floral Supply
+              </h4>
+              <Link href="/services" className="text-[#78B82A] hover:underline font-semibold text-[11px]">
+                Explore All 14 Floral Services →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 text-[11px]">
+              {FLORAL_SERVICES.map((srv) => (
+                <Link
+                  key={srv.slug}
+                  href={`/services/${srv.slug}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {srv.icon} {srv.shortTitle}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Pan-India Cities */}
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="font-bold text-[#F36B21] text-xs uppercase tracking-wider">
+                🇮🇳 Pan-India Flower Distribution Hubs
+              </h4>
+              <Link href="/city" className="text-[#78B82A] hover:underline font-semibold text-[11px]">
+                View All 24 Pan-India Cities →
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 text-[11px]">
+              {PAN_INDIA_CITIES.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/city/${city.slug}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {city.cityName.split(" ")[0]}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* ── Payment & Compliance Badges Strip ── */}
